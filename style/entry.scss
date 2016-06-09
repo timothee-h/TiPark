@@ -1,4 +1,3 @@
-/* already in style.scss
 @import "compass/reset";
 
 $color : #337baa;
@@ -7,10 +6,24 @@ $secondary-color : #bdb7b7;
 $radius : 5px;
 $duration : 0.3s;
 
+
+$white: #ecf0f1;
+
 * {
   box-sizing: border-box;
 }
 
-*/
+body {
+	font-family: Raleway, Arial, sans-serif;
+}
 
+
+.header{
+	&--title {
+		text-transform: uppercase;
+		margin: 23px;
+		color: $white;
+		font-size: 21px;
+	}
+}
 
