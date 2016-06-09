@@ -1,0 +1,14 @@
+/* already in style.scss
+@import "compass/reset";
+
+$color : #337baa;
+$bg-color : #282C34;
+$secondary-color : #bdb7b7;
+$radius : 5px;
+$duration : 0.3s;
+
+* {
+  box-sizing: border-box;
+}
+
+*/
