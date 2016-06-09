@@ -1,0 +1,446 @@
+@import "compass/reset";
+
+$color : #337baa;
+$bg-color : #282C34;
+$secondary-color : #bdb7b7;
+$radius : 5px;
+$duration : 0.3s;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: arial, sans-serif;
+  font-size: 16px;
+  input:focus, button:focus, select:focus {
+    outline: none;
+  }
+}
+
+.connexion {
+  background-color: $bg-color;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  &--container {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &--logo {
+      width: 100px;
+      display: block;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: -10px;
+    }
+    &--label {
+      display: inline-block;
+      float: left;
+      height: 45px;
+      width: 40px;
+      background-color: $color;
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+      position: relative;
+      top: 45px;
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $bg-color;
+        font-size: 30px;
+      }
+    }
+    &--input {
+      width: 100%;
+      height: 45px;
+      border-radius: $radius;
+      padding-left: 50px;
+      background-color: #2e323b;
+      color: #fff;
+      font-size: 20px;
+      border: none;
+      margin-bottom: -20px;
+    }
+    &--inscription {
+      color: $color;
+      font-size: 20px;
+      text-decoration: none;
+      display: block;
+      margin-top: 20px;
+    }
+    &--btn {
+      display: block;
+      margin-top: 50px;
+      font-size: 30px;
+      color: $bg-color;
+      background-color: $color;
+      border-radius: $radius;
+      border: none;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 5px 30px;
+    }
+  }
+}
+
+.choice {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  &--top {
+    display: block;
+    background-color: $color;
+    color: $bg-color;
+    height: 50%;
+    position: relative;
+    width: 100%;
+    &--title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+    }
+  }
+  &--bottom {
+    display: block;
+    background-color: $bg-color;
+    color: $color;
+    height: 50%;
+    position: relative;
+    width: 100%;
+    &--title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+    }
+  }
+}
+
+.sideBar {
+  height: 100%;
+  width: 300px;
+  background-color: #fff;
+  position: absolute;
+  z-index: -1;
+  transform: translateX(-150px);
+  transition-duration: 0.5s;
+  &-active {
+    transform: translateX(0px);
+    transition-duration: 0.5s;
+  }
+  &--profil {
+    height: 200px;
+    background-image: url('../img/profil-bg.jpg');
+    background-size: cover;
+    box-shadow: -1px 0px 10px 0px rgba(0,0,0,0.75);
+    &--img {
+      margin-top: 30px;
+      margin-left: 30px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: -1px 0px 10px 0px rgba(0,0,0,0.75);
+    }
+    &--name {
+      color: #fff;
+      font-weight: 500;
+      margin-top: 10px;
+      margin-left: 30px;
+    }
+    &--rating {
+      float: left;
+      margin-top: 10px;
+      margin-left: 30px;
+      > span {
+         float: right;
+         color: #aaa;
+         text-decoration: none;
+         font-size: 20px;
+         transition: color .4s;
+      }
+      > span:hover,
+      > span:focus,
+      > span:hover ~ span,
+      > span:focus ~ span {
+         color: orange;
+         cursor: pointer;
+      }
+    }
+  }
+  &--nav {
+    &--title {
+      color: $color;
+      padding-left: 15px;
+      display: inline-block;
+      height: 50px;
+      line-height: 60px;
+      border-bottom: 1px solid #ececec;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
+  ul {
+    width: 300px;
+    li {
+      width: 300px;
+      a {
+        display: inline-block;
+        color: $bg-color;
+        font-size: 18px;
+        text-decoration: none;
+        height: 50px;
+        line-height: 50px;
+        width: 100%;
+        padding-left: 20px;
+        font-weight: 100;
+        border-bottom: 1px solid #ececec;
+        transition-duration: $duration;
+        &:hover {
+          background-color: $color;
+          color: #fff;
+          transition-duration: $duration;
+        }
+      }
+    }
+  }
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 60px;
+  background-color: $color;
+  z-index: 10;
+  &--btn {
+    float: left;
+    height: 60px;
+    width: 100px;
+    cursor: pointer;
+    &--humburger {
+      width: 25px;
+      height: 2px;
+      background-color: #fff;
+      margin-top: 30px;
+      position: relative;
+      margin-left: 20px;
+      display: inline-block;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        width: 25px;
+        height: 2px;
+        background-color: #fff;
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 10px;
+        width: 25px;
+        height: 2px;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.home {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(0px);
+  transition-duration: 0.5s;
+  box-shadow: -1px 0px 10px 0px rgba(0,0,0,0.75);
+  &-active {
+    transform: translateX(300px);
+    transition-duration: 0.5s;
+  }
+  &--map {
+    height: 50%;
+    position: relative;
+    &--api {
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+    &--toolbar {
+      height: 50px;
+      width: 100%;
+      background-color: $secondary-color;
+      position: absolute;
+      bottom: 0;
+      &--title {
+        display: inline-block;
+        color: $color;
+        position: absolute;
+        top: 5px;
+        left: 10px;
+      }
+      &--endHour {
+        color: #fff;
+        position: absolute;
+        top: 23px;
+        left: 20px;
+        font-size: 20px;
+      }
+      &--control {
+        margin-left: 210px;
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+        color: #fff;
+        font-size: 25px;
+        i {
+          margin-left: 5px;
+        }
+      }
+      &--hour {
+        color: $color;
+        font-size: 30px;
+        margin-left: 10px;
+        > span {
+          color: #fff;
+          font-size: 20px;
+          margin-left: 3px;
+        }
+      }
+      &--search {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: $color;
+        text-align: center;
+        line-height: 65px;
+        box-shadow: 0px 3px 5px -1px #585858;
+        float: right;
+        position: absolute;
+        right: 75px;
+        margin-right: -60px;
+        top: -30px;
+        transform: scale(1);
+        transition-duration: 0.5s;
+        &--icon {
+          color: #fff;
+          font-size: 25px;
+          &-active {
+            display: none;
+          }
+        }
+        &-active {
+          transition-duration: 0.5s;
+          z-index: -1;
+          transform: scale(10);
+          &2 {
+            right: 50%;
+            top: 200px;
+          }
+        }
+      }
+    }
+  }
+  &--search {
+    display: none;
+    &-active {
+      display: block;
+    }
+    &--submit {
+      position: absolute;
+      bottom: 50px;
+      left: 50px;
+      font-size: 20px;
+      background-color: #fff;
+      padding: 15px 40px;
+      color: #464545;
+    }
+    &--close {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      font-size: 20px;
+      background-color: #FD5356;
+      padding: 15px 40px;
+      color: #fff;
+    }
+  }
+  &--content {
+    position: relative;
+    z-index: -2;
+    height: 50%;
+    overflow-y: scroll;
+    &--item {
+      height: 110px;
+      padding: 20px 0;
+      margin: 0 15px;
+      border-bottom: 1px solid $color;
+      &--img {
+        float: left;
+        height: 70px;
+        width: 110px;
+      }
+      &--time {
+        float: left;
+        margin-left: 10%;
+        height: 70px;
+        position: relative;
+        &--hour {
+          position: relative;
+          top: 10px;
+          display: block;
+          color: $color;
+          font-size: 30px;
+        }
+        &--price {
+          display: block;
+          color: $secondary-color;
+          position: absolute;
+          bottom: 10px;
+          font-size: 16px;
+        }
+      }
+      &--travel {
+        float: right;
+        height: 70px;
+        position: relative;
+        right: 15px;
+        &--duration {
+          position: relative;
+          top: 10px;
+          display: block;
+          color: $color;
+          font-size: 60px;
+          span {
+            font-size: 20px;
+            margin-left: 3px;
+            position: relative;
+            bottom: 30px;
+          }
+        }
+        &--distance {
+          display: block;
+          color: $secondary-color;
+          position: absolute;
+          bottom: 7px;
+          left: 35px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
