@@ -1,6 +1,17 @@
 @import "compass/reset";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
+@font-face {
+	font-family: 'stroke7pixeden';
+	src:url('fonts/stroke7pixeden/Pe-icon-7-stroke.eot?d7yf1v');
+	src:url('fonts/stroke7pixeden/Pe-icon-7-stroke.eot?#iefixd7yf1v') format('embedded-opentype'),
+  url('fonts/stroke7pixeden/Pe-icon-7-stroke.woff?d7yf1v') format('woff'),
+  url('fonts/stroke7pixeden/Pe-icon-7-stroke.ttf?d7yf1v') format('truetype'),
+  url('fonts/stroke7pixeden/Pe-icon-7-stroke.svg?d7yf1v#Pe-icon-7-stroke') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
-$color : #337baa;
+$color : #31bb8a;
 $bg-color : #282C34;
 $secondary-color : #bdb7b7;
 $radius : 5px;
@@ -11,15 +22,16 @@ $duration : 0.3s;
 }
 
 body {
-  font-family: arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
+	color: #4f4f4f;
   input:focus, button:focus, select:focus {
     outline: none;
   }
 }
 
 .connexion {
-  background-color: $bg-color;
+  background-color: #eeeeee;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -62,7 +74,7 @@ body {
       height: 45px;
       border-radius: $radius;
       padding-left: 50px;
-      background-color: #2e323b;
+      background-color: #cfd1d5;
       color: #fff;
       font-size: 20px;
       border: none;
@@ -144,7 +156,7 @@ body {
   }
   &--profil {
     height: 200px;
-    background-image: url('../img/profil-bg.jpg');
+    background-image: url('../img/profil-bg2.jpg');
     background-size: cover;
     box-shadow: -1px 0px 10px 0px rgba(0,0,0,0.75);
     &--img {
@@ -220,20 +232,18 @@ body {
 
 .header {
   position: absolute;
-  width: 100%;
   top: 0;
   height: 60px;
-  background-color: $color;
   z-index: 10;
   &--btn {
     float: left;
     height: 60px;
-    width: 100px;
+    width: 70px;
     cursor: pointer;
     &--humburger {
-      width: 25px;
-      height: 2px;
-      background-color: #fff;
+      width: 30px;
+      height: 5px;
+      background-color: $color;
       margin-top: 30px;
       position: relative;
       margin-left: 20px;
@@ -243,18 +253,18 @@ body {
         display: block;
         position: absolute;
         bottom: 10px;
-        width: 25px;
-        height: 2px;
-        background-color: #fff;
+        width: 30px;
+        height: 5px;
+        background-color: $color;
       }
       &::after {
         content: '';
         display: block;
         position: absolute;
         top: 10px;
-        width: 25px;
-        height: 2px;
-        background-color: #fff;
+        width: 30px;
+        height: 5px;
+        background-color: $color;
       }
     }
   }
@@ -275,17 +285,27 @@ body {
   &--map {
     height: 50%;
     position: relative;
+		transition-duration: 0.5s;
+		overflow: hidden;
+		&-active {
+			height: 100%;
+			transition-duration: 0.5s;
+			&2 {
+				height: 40%;
+				transition-duration: 0.5s
+			}
+		}
     &--api {
-      height: 100%;
+      height: 200%;
       width: 100%;
       z-index: 0;
     }
     &--toolbar {
       height: 50px;
       width: 100%;
-      background-color: $secondary-color;
+      background-color: $bg-color;
       position: absolute;
-      bottom: 0;
+      bottom: 0px;
       &--title {
         display: inline-block;
         color: $color;
@@ -297,47 +317,66 @@ body {
         color: #fff;
         position: absolute;
         top: 23px;
-        left: 20px;
+        left: 10px;
         font-size: 20px;
       }
       &--control {
-        margin-left: 210px;
+        margin-left: 190px;
         display: inline-block;
         height: 50px;
         line-height: 50px;
         color: #fff;
-        font-size: 25px;
-        i {
-          margin-left: 5px;
+        &--more {
+          display: inline-block;
+          height: 50px;
+          cursor: pointer;
+          &::after {
+            font-size: 40px;
+            content: '\e623';
+            font-family: 'stroke7pixeden';
+          }
+        }
+        &--less {
+          display: inline-block;
+          height: 50px;
+          cursor: pointer;
+          &::after {
+            font-size: 40px;
+            content: '\e644';
+            font-family: 'stroke7pixeden';
+          }
         }
       }
       &--hour {
         color: $color;
-        font-size: 30px;
+        position: relative;
+        bottom: 2px;
+        font-size: 42px;
         margin-left: 10px;
-        > span {
+        &::after {
+          content: 'h';
           color: #fff;
           font-size: 20px;
-          margin-left: 3px;
+          margin-left: 2px;
         }
       }
       &--search {
         height: 60px;
         width: 60px;
         border-radius: 50%;
-        background-color: $color;
+        background-color: #FAFAFA;
         text-align: center;
         line-height: 65px;
-        box-shadow: 0px 3px 5px -1px #585858;
         float: right;
         position: absolute;
         right: 75px;
         margin-right: -60px;
-        top: -30px;
+        bottom: 50%;
+				margin-bottom: 20px;
         transform: scale(1);
         transition-duration: 0.5s;
         &--icon {
-          color: #fff;
+          color: $color;
           font-size: 25px;
           &-active {
             display: none;
@@ -346,28 +385,93 @@ body {
         &-active {
           transition-duration: 0.5s;
           z-index: -1;
-          transform: scale(10);
+          transform: scale(12);
           &2 {
             right: 50%;
-            top: 200px;
+            bottom: 20%;
           }
+					&3 {
+						bottom: 0;
+					}
+					&4 {
+						bottom: 60%;
+					}
         }
       }
     }
   }
   &--search {
     display: none;
+    text-align: center;
+		padding-top: 40px;
+    color: #fff;
+		background-color: #fafafa;
+		width: 100%;
+		height: 100%;
     &-active {
       display: block;
+    }
+    &--title {
+      color: $color;
+      font-size: 20px;
+			text-transform: uppercase;
+    }
+    &--form {
+			width: 80%;
+			position: relative;
+	    left: 50%;
+	    transform: translateX(-50%);
+			color: $bg-color;
+			margin-top: 40px;
+			.form-group {
+				margin-top: 30px;
+			}
+			&--label {
+				margin-right: 5px;
+				font-size: 18px;
+			}
+			&--input {
+				font-size:18px;
+		    padding: 5px;
+		    border:none;
+		    background-color: transparent;
+		    box-shadow: none;
+		    border-radius: 0;
+				border-bottom: 1px solid $bg-color;
+				color: $bg-color;
+			}
+			&--input:focus {
+				border-bottom: 1px solid $color;
+				transition-duration: $duration;
+			}
+			&--labelSmall {
+				margin-right: 5px;
+				font-size: 18px;
+			}
+			&--inputSmall {
+				font-size:18px;
+		    padding: 5px;
+		    border:none;
+		    background-color: transparent;
+		    box-shadow: none;
+		    border-radius: 0;
+				border-bottom: 1px solid $bg-color;
+				color: $bg-color;
+				width: 105px;
+			}
+			&--inputSmall:focus {
+				border-bottom: 1px solid $color;
+				transition-duration: $duration;
+			}
     }
     &--submit {
       position: absolute;
       bottom: 50px;
       left: 50px;
       font-size: 20px;
-      background-color: #fff;
+      background-color: $color;
       padding: 15px 40px;
-      color: #464545;
+      color: #fff;
     }
     &--close {
       position: absolute;
@@ -380,15 +484,27 @@ body {
     }
   }
   &--content {
-    position: relative;
-    z-index: -2;
+		position: relative;
+		z-index: -2;
     height: 50%;
     overflow-y: scroll;
+    background-color: #EEEEEF;
+		transition-duration: 0.5s;
+		&-active {
+			height: 70%;
+			transition-duration: 0.5s;
+		}
     &--item {
-      height: 110px;
-      padding: 20px 0;
-      margin: 0 15px;
-      border-bottom: 1px solid $color;
+			overflow: hidden;
+      background-color: #fff;
+      height: 90px;
+      padding: 10px;
+      margin: 10px 10px;
+			transition-duration: 0.5s;
+			&-active {
+				transition-duration: 0.5s;
+				height: 400px;
+			}
       &--img {
         float: left;
         height: 70px;
@@ -418,10 +534,10 @@ body {
         float: right;
         height: 70px;
         position: relative;
-        right: 15px;
+        right: 20px;
         &--duration {
           position: relative;
-          top: 10px;
+          top: 5px;
           display: block;
           color: $color;
           font-size: 60px;
@@ -436,11 +552,83 @@ body {
           display: block;
           color: $secondary-color;
           position: absolute;
-          bottom: 7px;
+          bottom: 10px;
           left: 35px;
           font-size: 16px;
         }
       }
-    }
+			&--adresse {
+				margin-top: 90px;
+				border-top: 1px solid $color;
+				padding-top: 20px;
+				clear: both;
+				text-transform: uppercase;
+				font-size: 20px;
+				span:nth-child(1) {
+					display: block;
+					margin-bottom: 5px;
+				}
+			}
+			&--profil {
+				border-top: 1px solid $color;
+				margin-top: 20px;
+				padding-top: 20px;
+				position: relative;
+				&--img {
+					height: 80px;
+					border-radius: 50%;
+				}
+				&--rating {
+					display: inline-block;
+					text-align: left;
+					margin-left: 20px;
+					position: relative;
+					bottom: 20px;
+					&--name {
+						display: inline;
+						font-size: 20px;
+					}
+					&--star {
+						margin-top: 10px;
+					}
+				}
+				&--link {
+					float: right;
+					margin-top: 25px;
+					color: $color;
+					text-decoration: none;
+					width: 60px;
+				}
+			}
+			&--reservation {
+				border-top: 1px solid $color;
+				margin-top: 20px;
+				padding-top: 20px;
+				&--price {
+					display: inline-block;
+					font-size: 25px;
+					margin-left: 10px;
+					&--num {
+						font-size: 40px;
+						color: $color;
+						margin-left: 10px;
+					}
+				}
+				&--btn {
+					background-color: $color;
+					text-decoration: none;
+					padding: 15px 30px;
+					margin-right: 10px;
+					text-transform: uppercase;
+					float: right;
+					color: #fff;
+				}
+			}
+		}
   }
+}
+
+#current {
+	background-color: $color;
+	color: #fff;
 }
