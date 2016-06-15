@@ -8,13 +8,15 @@ $duration : 0.3s;
 
 
 $white: #ecf0f1;
+$font-size: 18px;
+$font-family: Raleway, Arial, sans-serif;
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-	font-family: Raleway, Arial, sans-serif;
+	font-family: $font-family;
 }
 
 
@@ -26,4 +28,232 @@ body {
 		font-size: 21px;
 	}
 }
+
+.entry {
+	padding-top: 60px; /*header*/
+	overflow-y: auto;
+	height: 100%;
+
+	&--photos {
+		overflow-x: auto;
+		overflow-y: hidden;
+		height: 150px;
+		&--list {
+			height: 100%;
+			width: 480px;
+			background: $secondary-color;
+			&--item {
+				display: inline-block;
+				vertical-align: top;
+				height: 100%;
+				position: relative;
+				&--photo {
+					height: 100%;
+				}
+				&--actions {
+					transform: scale(0);
+					opacity: 0;
+					transition: .3s;
+					position: absolute;
+					top: 50%; left: 50%;
+					width: 130px; height: 50px;
+					margin-left: -60px; margin-top: -25px;
+					&--action {
+						display: inline-block;
+						height: 50px; width: 50px;
+						border-radius: 50%; border: 2px solid $white;
+						color: white;
+						text-align: center;
+						& i {
+							font-size: 23px;
+							line-height: 45px;
+						}
+						&:nth-child(2) {
+							margin-left: 20px;
+						}
+					}
+				}
+				&:hover .entry--photos--list--item--actions{
+					transform: scale(1);
+					opacity: 1;
+					transition: .3s;
+				}
+				&--add {
+					text-align: center;
+					text-transform: uppercase;
+					margin: 0 30px;
+					&:nth-child(1){
+						font-size: 60px;
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	/* forms */
+
+	&--form {
+		padding: 20px;
+
+		label, h2 {
+			text-transform: uppercase;
+			display: block;
+			padding: 22px 0 10px 0;
+		}
+		input[type="text"], input[type="time"], input[type="date"], & input[type="number"], & textarea {
+			width: 100%;
+			padding: 5px 10px;
+			border: none;
+			border-bottom: 2px solid $color;
+			font-size: $font-size;
+			font-family: $font-family;
+		}
+		.complexInput {
+			border-bottom: 2px solid $color;
+			input {
+				border: none;
+			}
+		}
+		.qtyInput {
+			position: relative;
+			.plusMinusButtons {
+				position: absolute; right: 0; bottom: 0;
+				.qtyminus, .qtyplus {
+					font-size: 28px;
+					background: transparent;
+					color: $color;
+					padding: 0px 10px;
+					font-weight: bold;
+				}
+			}
+		}
+		.semiCol {
+			width: 45%; 
+			display: inline-block; vertical-align: top;
+			margin-left: 4%;
+		}
+		.calculatedNumber {
+			font-size: 22px;
+			color: $color;
+			padding-left: 0px;
+		}
+		.styledSelect {
+			border-bottom: 2px solid $color;
+			position: relative;
+			.fa-chevron-down {
+				color: $color;
+				position: absolute; right: 5px; top: 5px;
+			}
+			select {
+				width: 100%;
+				font-size: $font-size;
+				font-family: $font-family;
+				color: $secondary-color;
+				padding: 5px;
+				border: none;
+				background: transparent;
+				-webkit-appearance: none;
+			}
+		}
+		.inlineChoices {
+			margin-top: 20px;
+			label, input {
+				display: inline;
+				width: auto;
+			}
+		}
+		textarea {
+			color: $secondary-color;
+		}
+		&--address {
+			&--map {
+				margin-top: 20px;
+			}
+		}
+		.uppercaseButton {
+			text-transform: uppercase;
+			color: $color;
+			text-decoration: none;
+			float: right;
+			padding: 15px;
+		}
+		.hint {
+			padding: 10px;
+			padding-left: 60px;
+			position: relative;
+			&:before {
+				content: " ";
+				opacity: .8;
+				background: url("../img/mini-logo.png") scroll no-repeat;
+				background-size: contain;
+				display: block; width: 28px; height: 100%;
+				position: absolute; left: 10px; top: 15px;
+			}
+		}
+		&--periods {
+			margin: 10px -20px;
+			&--period{
+				padding: 10px;
+				position: relative;
+				h3 {
+					padding: 10px;
+					font-size: $font-size;
+				}
+				&--buttons {
+					position: absolute; right: 18px; top: 18px;
+					i {
+						display: inline-block; margin-left: 20px;
+						font-size: $font-size;
+					}
+				}
+				&.opened {
+					background: $color;
+					color: white;
+					padding: 10px 20px 20px 20px;
+					transition: .3s;
+					.entry--form-periods--period--content {
+						padding-top: 15px;
+					}
+					input[type="text"], input[type="time"], input[type="date"], input[type="number"], textarea, .styledSelect, .styledSelect select, .complexInput {
+						border-bottom-color: white;
+						background: $color;
+						color: white;
+					}
+					.calculatedNumber {
+						color: white;
+					}
+				}
+				&.closed {
+					border-bottom: 1px solid $secondary-color;
+					.entry--form-periods--period--content {
+						height: 0; overflow: hidden;
+						transition: .3s;
+					}
+				}
+				.personalizedInterval {
+					display: none;
+				}
+				&.persoInterval .personalizedInterval {
+					display: block;
+				}
+			}/*period*/
+		}
+
+		&--submit {
+			padding: 14px 20px; margin: 10px;
+			background: $color;
+			color: white;
+			border: none;
+			font-size: $font-size;
+			text-transform: uppercase;
+			float: right;
+		}
+	}
+
+}
+
+
+
+
 

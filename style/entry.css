@@ -56,3 +56,202 @@ body {
   margin: 23px;
   color: #ecf0f1;
   font-size: 21px; }
+
+.entry {
+  padding-top: 60px;
+  /*header*/
+  overflow-y: auto;
+  height: 100%
+  /* forms */ }
+  .entry--photos {
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 150px; }
+    .entry--photos--list {
+      height: 100%;
+      width: 480px;
+      background: #bdb7b7; }
+      .entry--photos--list--item {
+        display: inline-block;
+        vertical-align: top;
+        height: 100%;
+        position: relative; }
+        .entry--photos--list--item--photo {
+          height: 100%; }
+        .entry--photos--list--item--actions {
+          -webkit-transform: scale(0);
+              -ms-transform: scale(0);
+                  transform: scale(0);
+          opacity: 0;
+          -webkit-transition: .3s;
+                  transition: .3s;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 130px;
+          height: 50px;
+          margin-left: -60px;
+          margin-top: -25px; }
+          .entry--photos--list--item--actions--action {
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 2px solid #ecf0f1;
+            color: white;
+            text-align: center; }
+            .entry--photos--list--item--actions--action i {
+              font-size: 23px;
+              line-height: 45px; }
+            .entry--photos--list--item--actions--action:nth-child(2) {
+              margin-left: 20px; }
+        .entry--photos--list--item:hover .entry--photos--list--item--actions {
+          -webkit-transform: scale(1);
+              -ms-transform: scale(1);
+                  transform: scale(1);
+          opacity: 1;
+          -webkit-transition: .3s;
+                  transition: .3s; }
+        .entry--photos--list--item--add {
+          text-align: center;
+          text-transform: uppercase;
+          margin: 0 30px; }
+          .entry--photos--list--item--add:nth-child(1) {
+            font-size: 60px;
+            margin-top: 20px; }
+  .entry--form {
+    padding: 20px; }
+    .entry--form label, .entry--form h2 {
+      text-transform: uppercase;
+      display: block;
+      padding: 22px 0 10px 0; }
+    .entry--form input[type="text"], .entry--form input[type="time"], .entry--form input[type="date"], .entry--form input[type="number"], .entry--form textarea {
+      width: 100%;
+      padding: 5px 10px;
+      border: none;
+      border-bottom: 2px solid #337baa;
+      font-size: 18px;
+      font-family: Raleway, Arial, sans-serif; }
+    .entry--form .complexInput {
+      border-bottom: 2px solid #337baa; }
+      .entry--form .complexInput input {
+        border: none; }
+    .entry--form .qtyInput {
+      position: relative; }
+      .entry--form .qtyInput .plusMinusButtons {
+        position: absolute;
+        right: 0;
+        bottom: 0; }
+        .entry--form .qtyInput .plusMinusButtons .qtyminus, .entry--form .qtyInput .plusMinusButtons .qtyplus {
+          font-size: 28px;
+          background: transparent;
+          color: #337baa;
+          padding: 0px 10px;
+          font-weight: bold; }
+    .entry--form .semiCol {
+      width: 45%;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 4%; }
+    .entry--form .calculatedNumber {
+      font-size: 22px;
+      color: #337baa;
+      padding-left: 0px; }
+    .entry--form .styledSelect {
+      border-bottom: 2px solid #337baa;
+      position: relative; }
+      .entry--form .styledSelect .fa-chevron-down {
+        color: #337baa;
+        position: absolute;
+        right: 5px;
+        top: 5px; }
+      .entry--form .styledSelect select {
+        width: 100%;
+        font-size: 18px;
+        font-family: Raleway, Arial, sans-serif;
+        color: #bdb7b7;
+        padding: 5px;
+        border: none;
+        background: transparent;
+        -webkit-appearance: none; }
+    .entry--form .inlineChoices {
+      margin-top: 20px; }
+      .entry--form .inlineChoices label, .entry--form .inlineChoices input {
+        display: inline;
+        width: auto; }
+    .entry--form textarea {
+      color: #bdb7b7; }
+    .entry--form--address--map {
+      margin-top: 20px; }
+    .entry--form .uppercaseButton {
+      text-transform: uppercase;
+      color: #337baa;
+      text-decoration: none;
+      float: right;
+      padding: 15px; }
+    .entry--form .hint {
+      padding: 10px;
+      padding-left: 60px;
+      position: relative; }
+      .entry--form .hint:before {
+        content: " ";
+        opacity: .8;
+        background: url("../img/mini-logo.png") scroll no-repeat;
+        background-size: contain;
+        display: block;
+        width: 28px;
+        height: 100%;
+        position: absolute;
+        left: 10px;
+        top: 15px; }
+    .entry--form--periods {
+      margin: 10px -20px
+      /*period*/ }
+      .entry--form--periods--period {
+        padding: 10px;
+        position: relative; }
+        .entry--form--periods--period h3 {
+          padding: 10px;
+          font-size: 18px; }
+        .entry--form--periods--period--buttons {
+          position: absolute;
+          right: 18px;
+          top: 18px; }
+          .entry--form--periods--period--buttons i {
+            display: inline-block;
+            margin-left: 20px;
+            font-size: 18px; }
+        .entry--form--periods--period.opened {
+          background: #337baa;
+          color: white;
+          padding: 10px 20px 20px 20px;
+          -webkit-transition: .3s;
+                  transition: .3s; }
+          .entry--form--periods--period.opened .entry--form-periods--period--content {
+            padding-top: 15px; }
+          .entry--form--periods--period.opened input[type="text"], .entry--form--periods--period.opened input[type="time"], .entry--form--periods--period.opened input[type="date"], .entry--form--periods--period.opened input[type="number"], .entry--form--periods--period.opened textarea, .entry--form--periods--period.opened .styledSelect, .entry--form--periods--period.opened .styledSelect select, .entry--form--periods--period.opened .complexInput {
+            border-bottom-color: white;
+            background: #337baa;
+            color: white; }
+          .entry--form--periods--period.opened .calculatedNumber {
+            color: white; }
+        .entry--form--periods--period.closed {
+          border-bottom: 1px solid #bdb7b7; }
+          .entry--form--periods--period.closed .entry--form-periods--period--content {
+            height: 0;
+            overflow: hidden;
+            -webkit-transition: .3s;
+                    transition: .3s; }
+        .entry--form--periods--period .personalizedInterval {
+          display: none; }
+        .entry--form--periods--period.persoInterval .personalizedInterval {
+          display: block; }
+    .entry--form--submit {
+      padding: 14px 20px;
+      margin: 10px;
+      background: #337baa;
+      color: white;
+      border: none;
+      font-size: 18px;
+      text-transform: uppercase;
+      float: right; }
