@@ -1,4 +1,7 @@
 var currentPosBeginning;
+var map;
+var valider = document.querySelector(".home--search--submit");
+var geocoder = new google.maps.Geocoder;
 
 google.maps.event.addDomListener(window, 'load', init);
 
@@ -16,11 +19,26 @@ function init() {
         center: currentPosBeginning,
       };
       var mapElement = document.getElementById('map');
-      var map = new google.maps.Map(mapElement, mapOptions);
+      map = new google.maps.Map(mapElement, mapOptions);
       var marker = new google.maps.Marker({
         position: currentPosBeginning,
         map: map,
       });
     });
   }
+  valider.addEventListener("click", function(){
+    search(geocoder, map)
+  });
+}
+
+function search(geocoder, resultsMap){
+  var address = document.getElementById('adresse').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      resultsMap.setCenter(results[0].geometry.location);
+    }
+    else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
 }
