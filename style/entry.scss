@@ -1,6 +1,6 @@
 @import "compass/reset";
 
-$color : #337baa;
+$color : #31bb8a;
 $bg-color : #282C34;
 $secondary-color : #bdb7b7;
 $radius : 5px;
@@ -8,7 +8,8 @@ $duration : 0.3s;
 
 
 $white: #ecf0f1;
-$font-size: 18px;
+$dark: #282d34;
+$font-size: 17px;
 $font-family: Raleway, Arial, sans-serif;
 
 * {
@@ -19,13 +20,142 @@ body {
 	font-family: $font-family;
 }
 
+/* General common styles ! */
 
-.header{
+
+label, h2 {
+	text-transform: uppercase;
+	display: block;
+	padding: 22px 0 10px 0;
+}
+input[type="text"], input[type="time"], input[type="date"], input[type="number"], textarea {
+	width: 100%;
+	padding: 5px 10px;
+	border: none;
+	border-bottom: 2px solid $color;
+	font-size: $font-size;
+	font-family: $font-family;
+}
+.complexInput {
+	border-bottom: 2px solid $color;
+	input {
+		border: none;
+	}
+}
+.qtyInput {
+	position: relative;
+	.plusMinusButtons {
+		position: absolute; right: 0; bottom: 0;
+		.qtyminus, .qtyplus {
+			font-size: 28px;
+			background: transparent;
+			color: $color;
+			padding: 0px 10px;
+			font-weight: bold;
+		}
+	}
+}
+.semiCol {
+	width: 45%; 
+	display: inline-block; vertical-align: top;
+	margin-left: 4%;
+}
+.calculatedNumber {
+	font-size: 22px;
+	color: $color;
+	padding-left: 0px;
+}
+.styledSelect {
+	border-bottom: 2px solid $color;
+	position: relative;
+	.fa-chevron-down {
+		color: $color;
+		position: absolute; right: 5px; top: 5px;
+	}
+	select {
+		width: 100%;
+		font-size: $font-size;
+		font-family: $font-family;
+		color: $secondary-color;
+		padding: 5px;
+		border: none;
+		background: transparent;
+		-webkit-appearance: none;
+	}
+}
+.inlineChoices {
+	margin-top: 20px;
+	label, input {
+		display: inline;
+		width: auto;
+	}
+}
+textarea {
+	color: $secondary-color;
+}
+
+.uppercaseButton {
+	text-transform: uppercase;
+	color: $color;
+	text-decoration: none;
+	float: right;
+	padding: 15px;
+}
+.hint {
+	padding: 10px;
+	padding-left: 60px;
+	position: relative;
+	&:before {
+		content: " ";
+		opacity: .8;
+		background: url("../img/tipark-logo.png") scroll no-repeat;
+		background-size: contain;
+		display: block; width: 28px; height: 100%;
+		position: absolute; left: 10px; top: 15px;
+	}
+}
+
+/* specific styles : */
+
+.header {
+	left: 0; right: 0;
+	background: $color;
 	&--title {
 		text-transform: uppercase;
 		margin: 23px;
 		color: $white;
 		font-size: 21px;
+	}
+	&--btn {
+		&--humburger {
+			background-color: white;
+			&::before {
+				background-color: white;
+			}
+			&::after {
+				background-color: white;
+			}
+		}
+	}
+}
+
+.stars {
+	display: block;
+	margin-top: 10px;
+	float: left;
+	> span {
+		float: right;
+		color: #aaa;
+		text-decoration: none;
+		font-size: 20px;
+		transition: color .4s;
+	}
+	> span:hover,
+	> span:focus,
+	> span:hover ~ span,
+	> span:focus ~ span {
+		color: orange;
+		cursor: pointer;
 	}
 }
 
@@ -96,99 +226,9 @@ body {
 	&--form {
 		padding: 20px;
 
-		label, h2 {
-			text-transform: uppercase;
-			display: block;
-			padding: 22px 0 10px 0;
-		}
-		input[type="text"], input[type="time"], input[type="date"], & input[type="number"], & textarea {
-			width: 100%;
-			padding: 5px 10px;
-			border: none;
-			border-bottom: 2px solid $color;
-			font-size: $font-size;
-			font-family: $font-family;
-		}
-		.complexInput {
-			border-bottom: 2px solid $color;
-			input {
-				border: none;
-			}
-		}
-		.qtyInput {
-			position: relative;
-			.plusMinusButtons {
-				position: absolute; right: 0; bottom: 0;
-				.qtyminus, .qtyplus {
-					font-size: 28px;
-					background: transparent;
-					color: $color;
-					padding: 0px 10px;
-					font-weight: bold;
-				}
-			}
-		}
-		.semiCol {
-			width: 45%; 
-			display: inline-block; vertical-align: top;
-			margin-left: 4%;
-		}
-		.calculatedNumber {
-			font-size: 22px;
-			color: $color;
-			padding-left: 0px;
-		}
-		.styledSelect {
-			border-bottom: 2px solid $color;
-			position: relative;
-			.fa-chevron-down {
-				color: $color;
-				position: absolute; right: 5px; top: 5px;
-			}
-			select {
-				width: 100%;
-				font-size: $font-size;
-				font-family: $font-family;
-				color: $secondary-color;
-				padding: 5px;
-				border: none;
-				background: transparent;
-				-webkit-appearance: none;
-			}
-		}
-		.inlineChoices {
-			margin-top: 20px;
-			label, input {
-				display: inline;
-				width: auto;
-			}
-		}
-		textarea {
-			color: $secondary-color;
-		}
 		&--address {
 			&--map {
 				margin-top: 20px;
-			}
-		}
-		.uppercaseButton {
-			text-transform: uppercase;
-			color: $color;
-			text-decoration: none;
-			float: right;
-			padding: 15px;
-		}
-		.hint {
-			padding: 10px;
-			padding-left: 60px;
-			position: relative;
-			&:before {
-				content: " ";
-				opacity: .8;
-				background: url("../img/mini-logo.png") scroll no-repeat;
-				background-size: contain;
-				display: block; width: 28px; height: 100%;
-				position: absolute; left: 10px; top: 15px;
 			}
 		}
 		&--periods {
@@ -216,12 +256,20 @@ body {
 						padding-top: 15px;
 					}
 					input[type="text"], input[type="time"], input[type="date"], input[type="number"], textarea, .styledSelect, .styledSelect select, .complexInput {
-						border-bottom-color: white;
+						border-bottom-color: $dark;
 						background: $color;
 						color: white;
 					}
+					& .qtyInput .plusMinusButtons .qtyminus, & .qtyInput .plusMinusButtons .qtyplus {
+						color: $dark;
+					}
 					.calculatedNumber {
 						color: white;
+					}
+					.styledSelect {
+						.fa-chevron-down {
+							color: $dark;
+						}
 					}
 				}
 				&.closed {
@@ -251,7 +299,117 @@ body {
 		}
 	}
 
-}
+}/* entry */
+
+.owner {
+	overflow-y: auto;
+	height: 100%;
+	position: relative;
+	&--info {
+		margin-top: 55px;
+		&--bg {
+			background: $color;
+			margin-bottom: -75px;
+			height: 100px;
+		}
+		&--photo {
+			border-radius: 50%;
+			border: 6px solid $white;
+			height: 150px; width: 150px;
+			margin: auto;
+			overflow: hidden;
+		}
+		&--photo img {
+			height: 150px;
+		}
+		&--name {
+			text-align: center; font-size: 30px;
+			color: $color;
+			margin-top: 15px;
+		}
+	}
+	&--reviews {
+		&--total {
+			text-align: center;
+			margin-top: 10px;
+		}
+		&--stars {
+			position: absolute; left: 50%; margin-left: -50px;
+			> span {
+				font-size: 25px;
+			}
+		}
+		&--edit{
+			padding: 20px 30px;
+			margin-top: 30px;
+		}
+		&--title{
+			padding: 20px 20px 0 20px;
+		}
+		&--list{
+			padding: 0 20px;
+			&--item {
+				padding: 20px;
+				border-bottom: 1px solid $secondary-color;
+				> div {
+					display: inline-block; vertical-align: top;
+					width: 75%;
+					padding-left: 30px;
+				}
+				&--photo {
+					border-radius: 50%;
+					width: 60px; height: 60px;
+					display: inline-block; vertical-align: top;
+				}
+				&--stars {
+					float: left;
+					margin-top: 0;
+				}
+				&--reviewer {
+					font-size: 22px;
+					color: $color;
+					margin-top: 30px;
+				}
+				&--review {
+					font-size: $font-size;
+				}
+			}
+		}
+	}
+	
+	&--spots {
+		&--title{
+			margin: 30px 20px 0 20px;
+		}
+		&--list{
+			padding: 0 20px;
+			&--item {
+				padding: 20px;
+				border-bottom: 1px solid $secondary-color;
+				> div {
+					display: inline-block; vertical-align: top;
+					width: 70%;
+					padding-left: 30px;
+				}
+				&--photo {
+					display: inline-block; vertical-align: top;
+					width: 28%;
+				}
+				&--stars {
+					float: left;
+					margin-top: 0;
+				}
+				&--spot {
+					font-size: 18px;
+					color: $color;
+				}
+				&--description {
+					font-size: $font-size;
+				}
+			}
+		}
+	}/*spots*/
+}/*owner*/
 
 
 

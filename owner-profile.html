@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mon profil propriétaire - TiPark</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Raleway:500,500italic,100,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="style/style.css">
+		<link rel="stylesheet" href="style/entry.css">
+	</head>
+	<body>
+		<div class="sideBar" id="sideBar">
+			<div class="sideBar--profil">
+				<img src="img/profil.jpg" alt="photo de profil" class="sideBar--profil--img">
+				<h3 class="sideBar--profil--name">Timothee Hatton</h3>
+				<div class="sideBar--profil--rating"><!--
+--><span title="5">☆</span><!--
+--><span title="4">☆</span><!--
+--><span title="3">☆</span><!--
+--><span title="2">☆</span><!--
+--><span title="1">☆</span>
+				</div>
+			</div>
+			<nav class="sideBar--nav">
+				<ul>
+					<li class="sideBar--nav--title">Se garer</li>
+					<li><a href="#">Trouver une place</a></li>
+					<li><a href="#">Mon profil</a></li>
+					<li class="sideBar--nav--title">Espace propriétaire</li>
+					<li><a href="#">Gérer mes places de parking</a></li>
+					<li><a href="#">Mon profil propriétaire</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="home" id="home">
+			<div class="header">
+				<div class="header--btn" id="menu-btn">
+					<span class="header--btn--humburger"></span>
+				</div>
+			</div>
+			<div class="owner">
+				<div class="owner--info">
+					<div class="owner--info--bg"></div>
+					<div class="owner--info--photo">
+						<img src="img/profile-photo.png" alt="my profile"/>
+					</div>
+					<h1 class="owner--info--name">Emilia Clarke</h1>
+				</div>
+				<div class="owner--reviews">
+					<p class="owner--reviews--total">56 évaluations</p>
+					<div class="owner--reviews--stars stars"><!--
+						--><span title="5">☆</span><!--
+						--><span title="4">☆</span><!--
+						--><span title="3">☆</span><!--
+						--><span title="2">☆</span><!--
+						--><span title="1">☆</span>
+					</div>
+					<form action="#" method="post" class="owner--reviews--edit">
+						<input type="text" placeholder="Ecrivez votre avis..."/>
+						<a href="#" class="uppercaseButton">Publier votre évaluation</a>
+					</form>
+					<h2 class="owner--reviews--title">évaluations</h2>
+					<ul class="owner--reviews--list">
+						<li class="owner--reviews--list--item">
+							<img src="img/profil.jpg" alt="reviewer" class="owner--reviews--list--item--photo"/>
+							<div>
+								<div class="owner--reviews--list--item--stars stars"><!--
+									--><span title="5">☆</span><!--
+									--><span title="4">☆</span><!--
+									--><span title="3">☆</span><!--
+									--><span title="2">☆</span><!--
+									--><span title="1">☆</span>
+								</div>
+								<h4 class="owner--reviews--list--item--reviewer">Timothée Hatton</h4>
+								<p class="owner--reviews--list--item--review">Très bonne place de parking, aucun problème.</p>
+							</div>
+						</li>
+						<li class="owner--reviews--list--item">
+							<img src="img/profil.jpg" alt="reviewer" class="owner--reviews--list--item--photo"/>
+							<div>
+								<div class="owner--reviews--list--item--stars stars"><!--
+									--><span title="5">☆</span><!--
+									--><span title="4">☆</span><!--
+									--><span title="3">☆</span><!--
+									--><span title="2">☆</span><!--
+									--><span title="1">☆</span>
+								</div>
+								<h4 class="owner--reviews--list--item--reviewer">Timothée Hatton</h4>
+								<p class="owner--reviews--list--item--review">Très bonne place de parking, aucun problème.</p>
+							</div>
+						</li>
+					</ul>
+					<a href="#" class="uppercaseButton">Voir toutes</a>
+				</div>
+				
+				<div class="owner-spots">
+					<h2 class="owner--spots--title">Places de parking</h2>
+					<ul class="owner--spots--list">
+						<li class="owner--spots--list--item">
+							<img src="img/parking1.jpg" alt="spot" class="owner--spots--list--item--photo"/>
+							<div>
+								<h4 class="owner--spots--list--item--spot">27 Bis Rue du Progrès, 93100 Montreuil</h4>
+								<p class="owner--spots--list--item--description">1.20€/h - extérieure</p>
+							</div>
+						</li>
+						<li class="owner--spots--list--item">
+							<img src="img/parking2.jpg" alt="spot" class="owner--spots--list--item--photo"/>
+							<div>
+								<h4 class="owner--spots--list--item--spot">27 Bis Rue du Progrès, 93100 Montreuil</h4>
+								<p class="owner--spots--list--item--description">0.80€/h - extérieure</p>
+							</div>
+						</li>
+					</ul>
+					<a href="#" class="uppercaseButton">Voir toutes</a>
+					
+				</div>
+
+			</div>
+		</div>
+		<!--script-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<script src="js/map.js"></script>
+		<script src="js/entry.js"></script>
+	</body>
+</html>
