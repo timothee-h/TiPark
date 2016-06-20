@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mon profil locataire - TiPark</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Raleway:500,500italic,100,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="style/style.css">
+		<link rel="stylesheet" href="style/entry.css">
+	</head>
+	<body>
+		<div class="sideBar" id="sideBar">
+			<div class="sideBar--profil">
+				<img src="img/profil.jpg" alt="photo de profil" class="sideBar--profil--img">
+				<h3 class="sideBar--profil--name">Timothee Hatton</h3>
+				<div class="sideBar--profil--rating"><!--
+--><span title="5">☆</span><!--
+--><span title="4">☆</span><!--
+--><span title="3">☆</span><!--
+--><span title="2">☆</span><!--
+--><span title="1">☆</span>
+				</div>
+			</div>
+			<nav class="sideBar--nav">
+				<ul>
+					<li class="sideBar--nav--title">Se garer</li>
+					<li><a href="#">Trouver une place</a></li>
+					<li><a href="#">Mon profil</a></li>
+					<li class="sideBar--nav--title">Espace propriétaire</li>
+					<li><a href="#">Gérer mes places de parking</a></li>
+					<li><a href="#">Mon profil propriétaire</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="home" id="home">
+			<div class="header">
+				<div class="header--btn" id="menu-btn">
+					<span class="header--btn--humburger"></span>
+				</div>
+			</div>
+			<div class="buyer">
+				<div class="buyer--info">
+					<div class="buyer--info--bg"></div>
+					<div class="buyer--info--photo">
+						<img src="img/profil.jpg" alt="my profile"/>
+					</div>
+					<h1 class="buyer--info--name">Timothée Hatton</h1>
+				</div>
+
+				<div class="buyer-credits">
+					<div class="semiCol">
+						<h2 class="buyer--credits--title">Vos crédits</h2>
+						<p class="buyer--credits--amount"><span>35,</span>4€</p>
+					</div>
+					<div class="semiCol">
+						<h2 class="buyer--credits--title">Ajouter des crédits</h2>
+						<p class="buyer--credits--buy">
+							<a href="http://paypal.me/noefalque" class="uppercaseButton">avec PayPal</a>
+							<a href="http://google.fr?q=Shut+up+and+give+me+my+money" class="uppercaseButton">par carte</a>
+						</p>
+
+					</div>
+
+					<div class="buyer-spots">
+						<h2 class="buyer--spots--title">Dernières locations</h2>
+						<ul class="buyer--spots--list">
+							<li class="buyer--spots--list--item">
+								<img src="img/parking1.jpg" alt="spot" class="buyer--spots--list--item--photo"/>
+								<div>
+									<h4 class="buyer--spots--list--item--spot">27 Bis Rue du Progrès, 93100 Montreuil</h4>
+									<p class="buyer--spots--list--item--description">1.20€/h - extérieure</p>
+								</div>
+								<a href="#" class="buyer--spots--flag"><span class="fa fa-flag"></span></a>
+							</li>
+							<li class="buyer--spots--list--item">
+								<img src="img/parking2.jpg" alt="spot" class="buyer--spots--list--item--photo"/>
+								<div>
+									<h4 class="buyer--spots--list--item--spot">27 Bis Rue du Progrès, 93100 Montreuil</h4>
+									<p class="buyer--spots--list--item--description">0.80€/h - extérieure</p>
+								</div>
+								<a href="#" class="buyer--spots--flag"><span class="fa fa-flag"></span></a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+			<!--script-->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+			<script src="js/app.js"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+			<script src="js/entry.js"></script>
+			</body>
+		</html>

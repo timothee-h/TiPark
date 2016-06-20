@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -148,12 +149,15 @@ textarea {
 .header {
   left: 0;
   right: 0;
-  background: #31bb8a; }
+  background: #31bb8a;
+  overflow: hidden; }
   .header--title {
     text-transform: uppercase;
     margin: 23px;
     color: #ecf0f1;
-    font-size: 21px; }
+    font-size: 21px;
+    width: 1000px
+    /*d├®passe titre*/ }
   .header--btn--humburger {
     background-color: white; }
     .header--btn--humburger::before {
@@ -179,6 +183,9 @@ textarea {
     color: orange;
     cursor: pointer; }
 
+#photoModel {
+  display: none; }
+
 .entry {
   padding-top: 60px;
   /*header*/
@@ -191,7 +198,7 @@ textarea {
     height: 150px; }
     .entry--photos--list {
       height: 100%;
-      width: 480px;
+      width: 1000px;
       background: #bdb7b7; }
       .entry--photos--list--item {
         display: inline-block;
@@ -227,6 +234,8 @@ textarea {
               line-height: 45px; }
             .entry--photos--list--item--actions--action:nth-child(2) {
               margin-left: 20px; }
+            .entry--photos--list--item--actions--action--input {
+              display: none; }
         .entry--photos--list--item:hover .entry--photos--list--item--actions {
           -webkit-transform: scale(1);
               -ms-transform: scale(1);
@@ -392,3 +401,76 @@ textarea {
         font-size: 17px; }
 
 /*owner*/
+.buyer {
+  overflow-y: auto;
+  height: 100%;
+  position: relative
+  /*credits*/
+  /*spots*/ }
+  .buyer--info {
+    margin-top: 55px; }
+    .buyer--info--bg {
+      background: #31bb8a;
+      margin-bottom: -75px;
+      height: 100px; }
+    .buyer--info--photo {
+      border-radius: 50%;
+      border: 6px solid #ecf0f1;
+      height: 150px;
+      width: 150px;
+      margin: auto;
+      overflow: hidden; }
+    .buyer--info--photo img {
+      height: 150px; }
+    .buyer--info--name {
+      text-align: center;
+      font-size: 30px;
+      color: #31bb8a;
+      margin-top: 15px; }
+  .buyer--credits--title {
+    margin: 30px 20px 0 20px; }
+  .buyer--credits--amount {
+    text-align: center;
+    font-size: 30px;
+    color: #31bb8a;
+    font-weight: 100; }
+    .buyer--credits--amount span {
+      font-size: 50px; }
+  .buyer--credits--buy {
+    padding-left: 10px; }
+    .buyer--credits--buy a.uppercaseButton {
+      display: block;
+      padding: 5px;
+      float: none; }
+  .buyer--spots--title {
+    margin: 30px 20px 0 20px; }
+  .buyer--spots--list {
+    padding: 0 20px; }
+    .buyer--spots--list--item {
+      position: relative;
+      padding: 20px;
+      border-bottom: 1px solid #bdb7b7; }
+      .buyer--spots--list--item > div {
+        display: inline-block;
+        vertical-align: top;
+        width: 70%;
+        padding-left: 30px; }
+      .buyer--spots--list--item--photo {
+        display: inline-block;
+        vertical-align: top;
+        width: 28%; }
+      .buyer--spots--list--item--stars {
+        float: left;
+        margin-top: 0; }
+      .buyer--spots--list--item--spot {
+        font-size: 18px;
+        color: #31bb8a; }
+      .buyer--spots--list--item--description {
+        font-size: 17px; }
+  .buyer--spots--flag {
+    color: #282d34;
+    position: absolute;
+    right: 0;
+    top: 40px; }
+
+/*buyer*/

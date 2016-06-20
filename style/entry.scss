@@ -120,11 +120,13 @@ textarea {
 .header {
 	left: 0; right: 0;
 	background: $color;
+	overflow: hidden;
 	&--title {
 		text-transform: uppercase;
 		margin: 23px;
 		color: $white;
 		font-size: 21px;
+		width: 1000px;/*dépasse titre*/
 	}
 	&--btn {
 		&--humburger {
@@ -159,6 +161,10 @@ textarea {
 	}
 }
 
+#photoModel {
+	display: none;
+}
+
 .entry {
 	padding-top: 60px; /*header*/
 	overflow-y: auto;
@@ -170,7 +176,7 @@ textarea {
 		height: 150px;
 		&--list {
 			height: 100%;
-			width: 480px;
+			width: 1000px;
 			background: $secondary-color;
 			&--item {
 				display: inline-block;
@@ -200,6 +206,9 @@ textarea {
 						}
 						&:nth-child(2) {
 							margin-left: 20px;
+						}
+						&--input {
+							display: none;
 						}
 					}
 				}
@@ -376,7 +385,7 @@ textarea {
 			}
 		}
 	}
-	
+
 	&--spots {
 		&--title{
 			margin: 30px 20px 0 20px;
@@ -410,6 +419,100 @@ textarea {
 		}
 	}/*spots*/
 }/*owner*/
+
+
+.buyer {
+	overflow-y: auto;
+	height: 100%;
+	position: relative;
+	&--info {
+		margin-top: 55px;
+		&--bg {
+			background: $color;
+			margin-bottom: -75px;
+			height: 100px;
+		}
+		&--photo {
+			border-radius: 50%;
+			border: 6px solid $white;
+			height: 150px; width: 150px;
+			margin: auto;
+			overflow: hidden;
+		}
+		&--photo img {
+			height: 150px;
+		}
+		&--name {
+			text-align: center; font-size: 30px;
+			color: $color;
+			margin-top: 15px;
+		}
+	}
+
+	&--credits {
+		&--title{
+			margin: 30px 20px 0 20px;
+		}
+		&--amount{
+			text-align: center;
+			font-size: 30px;
+			color: $color;
+			font-weight: 100;
+			span {
+				font-size: 50px;
+			}
+		}
+		&--buy {
+			padding-left: 10px;
+			a.uppercaseButton {
+				display: block;
+				padding: 5px;
+				float: none;
+			}
+		}
+	}/*credits*/
+
+	&--spots {
+		&--title{
+			margin: 30px 20px 0 20px;
+		}
+		&--list{
+			padding: 0 20px;
+			&--item {
+				position: relative;
+				padding: 20px;
+				border-bottom: 1px solid $secondary-color;
+				> div {
+					display: inline-block; vertical-align: top;
+					width: 70%;
+					padding-left: 30px;
+				}
+				&--photo {
+					display: inline-block; vertical-align: top;
+					width: 28%;
+				}
+				&--stars {
+					float: left;
+					margin-top: 0;
+				}
+				&--spot {
+					font-size: 18px;
+					color: $color;
+				}
+				&--description {
+					font-size: $font-size;
+				}
+			}
+		}
+		&--flag {
+			color: $dark;
+			position: absolute; right: 0; top: 40px;
+		}
+	}/*spots*/
+}/*buyer*/
+
+
+
 
 
 
