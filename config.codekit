@@ -254,6 +254,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/js\/places.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/places.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/js\/places-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
 	"\/owner-profile.html": {
 		"fileType": 8192,
 		"ignore": 0,
