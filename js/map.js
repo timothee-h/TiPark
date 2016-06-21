@@ -71,13 +71,18 @@ function printMarkers(markerList, counter){
     map: map,
     data: counter
   });
-  console.log(markerList[counter].position.lat);
   markerToPrint.setMap(map);
+  google.maps.event.addListener(markerToPrint, "click", function(event){
+    $(".home--content--item[data=" + counter + "]").addClass('home--content--item-active');
+    $('.home--map').addClass('home--map-active2');
+    $('.home--content').addClass('home--content-active');
+    $('#search').addClass('home--map--toolbar--search-active4');
+  });
 }
 
 function printItem(markerList, counter){
   var stringToPrint = '';
-  stringToPrint += '<div class="home--content--item">';
+  stringToPrint += '<div class="home--content--item" data="' + counter + '">';
   stringToPrint += '<img class="home--content--item--img" src="' + markerList[counter].img + '" alt="parking">';
   stringToPrint += '<div class="home--content--item--time">';
   stringToPrint += '<div class="home--content--item--time--hour">' + markerList[counter].time.hour + '</div>';
@@ -115,4 +120,5 @@ function printItem(markerList, counter){
   stringToPrint += '<a href="reservation.html" class="home--content--item--reservation--btn">Je réserve</a>';
   stringToPrint += '</div>';
   stringToPrint += '</div>';
+  $(".home--content").append(stringToPrint);
 }
