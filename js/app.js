@@ -103,4 +103,15 @@ $(document).ready(function() {
     });
   }
   resizeItem();
+  //selectPlace
+  function selectPlace() {
+    $('.home--content--item--reservation--btn').click( function() {
+      $('.home--content--item').toggleClass('home--content--item-activeLoc');
+      $('.home--content').toggleClass('home--content-activeLoc');
+      $('.home--map--toolbar--search').toggleClass('home--map--toolbar-activeLoc');
+      $('.home--map--toolbar').toggleClass('home--map--toolbar-activeLoc');
+      $('.home--map').toggleClass('home--map-activeLoc');
+    });
+  }
+  selectPlace();
 });

@@ -285,6 +285,9 @@ body {
     position: relative;
     transition-duration: 0.5s;
     overflow: hidden; }
+    .home--map-activeLoc {
+      height: 100%;
+      margin-bottom: -110px; }
     .home--map-active {
       height: 100%;
       transition-duration: 0.5s; }
@@ -301,6 +304,8 @@ body {
       background-color: #282C34;
       position: absolute;
       bottom: 0px; }
+      .home--map--toolbar-activeLoc {
+        display: none; }
       .home--map--toolbar--title {
         display: inline-block;
         color: #31bb8a;
@@ -457,6 +462,9 @@ body {
     .home--content-active {
       height: 70%;
       transition-duration: 0.5s; }
+    .home--content-activeLoc {
+      overflow: hidden;
+      height: 110px; }
     .home--content--item {
       overflow: hidden;
       background-color: #fff;
