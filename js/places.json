@@ -1,0 +1,62 @@
+var allMarkers = [
+  {
+    position: {
+      lat: 10,
+      lng: 10
+    },
+    time: {
+      hour: "21:00",
+      price: 3
+    },
+    img: "img/parking1.jpg",
+    adresse: {
+      rue: "On s'en fout",
+      code: "94300 Vincennes",
+    },
+    profil: {
+      name: "Timothée Hatton",
+      img: "img/profil-bg1.png",
+    }
+  },
+  {
+    position: {
+      lat: 10,
+      lng: 10
+    },
+    time: {
+      hour: "21:00",
+      price: 3
+    },
+    img: "img/parking2.jpg",
+    adresse: {
+      rue: "On s'en fout",
+      code: "94300 Vincennes",
+    },
+    profil: {
+      name: "Vincent Tranphat",
+      img: "img/profil-bg2.png",
+    }
+  },
+  {
+    position: {
+      lat: 10,
+      lng: 10
+    },
+    time: {
+      hour: "21:00",
+      price: 3
+    },
+    img: "img/parking3.jpg",
+    adresse: {
+      rue: "On s'en fout",
+      code: "94300 Vincennes",
+    },
+    profil: {
+      name: "Antoine Mouës",
+      img: "img/profil-bg3.png",
+    }
+  },
+];
+
+
+

@@ -25,6 +25,7 @@ function init() {
         map: map,
       });
     });
+    print(allMarkers);
   }
   valider.addEventListener("click", function(){
     search(geocoder, map)
@@ -41,4 +42,65 @@ function search(geocoder, resultsMap){
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
+}
+
+function print(markerList){
+  for(var i=0; i<markerList.length; i++){
+    printMarkers(markerList, i);
+    printItem(markerList, i);
+  }
+}
+
+function printMarkers(markerList, counter){
+  var markerToPrint = new google.maps.Marker({
+    position:{
+      lat: markerList[counter].position.lat,
+      lng: markerList[counter].position.lng
+    },
+    map: map,
+    data: counter
+  });
+  markerToPrint.setMap(map);
+}
+
+function printItem(markerList, counter){
+  var stringToPrint = '';
+  stringToPrint += '<div class="home--content--item">';
+  stringToPrint += '<img class="home--content--item--img" src="' + markerList[counter].img + '" alt="parking">';
+  stringToPrint += '<div class="home--content--item--time">';
+  stringToPrint += '<div class="home--content--item--time--hour">' + markerList[counter].time.hour + '</div>';
+  stringToPrint += '<div class="home--content--item--time--price">' + markerList[counter].time.price + '€ - heure</div>';
+  stringToPrint += '</div>';
+  stringToPrint += '<div class="home--content--item--travel">';
+  stringToPrint += '<div class="home--content--item--travel--duration"><span>min</span></div>';
+  stringToPrint += '<div class="home--content--item--travel--distance">Km</div>';
+  stringToPrint += '</div>';
+  stringToPrint += '<div class="home--content--item--adresse">';
+  stringToPrint += '<span class="home--content--item--adresse--rue">' + markerList[counter].adresse.rue + '</span>';
+  stringToPrint += '<span class="home--content--item--adresse--code">' + markerList[counter].adresse.code +'</span>';
+  stringToPrint += '</div>';
+  stringToPrint += '<div class="home--content--item--profil">';
+  stringToPrint += '<img src="' + markerList[counter].profil.img + '" alt="" class="home--content--item--profil--img">';
+  stringToPrint += '<div class="home--content--item--profil--rating">';
+  stringToPrint += '<span class="home--content--item--profil--rating--name">';
+  stringToPrint += markerList[counter].profil.name;
+  stringToPrint += '</span>';
+  stringToPrint += '<div class="home--content--item--profil--rating--star"><!--';
+  stringToPrint += '--><span title="5">☆</span><!--';
+  stringToPrint += '--><span title="4">☆</span><!--';
+  stringToPrint += '--><span title="3">☆</span><!--';
+  stringToPrint += '--><span title="2">☆</span><!--';
+  stringToPrint += '--><span title="1">☆</span>';
+  stringToPrint += '</div>';
+  stringToPrint += '</div>';
+  stringToPrint += '<a class="home--content--item--profil--link" href="profil.html">Voir le profil</a>';
+  stringToPrint += '</div>';
+  stringToPrint += '<div class="home--content--item--reservation">';
+  stringToPrint += '<div class="home--content--item--reservation--price">';
+  stringToPrint += '<span class="home--content--item--reservation--price--total">Total</span>';
+  stringToPrint += '<span class="home--content--item--reservation--price--num">' + /*markerList[counter].time.price*(document.querySelector("..home--map--toolbar--hour")) */ '€</span>';
+  stringToPrint += '</div>';
+  stringToPrint += '<a href="reservation.html" class="home--content--item--reservation--btn">Je réserve</a>';
+  stringToPrint += '</div>';
+  stringToPrint += '</div>';
 }

@@ -1,276 +1,276 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<title>Louer ma place - TiPark</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-		<link href='https://fonts.googleapis.com/css?family=Raleway:500,500italic,100,800' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="style/style.css">
-		<link rel="stylesheet" href="style/entry.css">
-	</head>
-	<body>
-		<div class="sideBar" id="sideBar">
-			<div class="sideBar--profil">
-				<img src="img/profil.jpg" alt="photo de profil" class="sideBar--profil--img">
-				<h3 class="sideBar--profil--name">Timothee Hatton</h3>
-				<div class="sideBar--profil--rating"><!--
+  <head>
+    <meta charset="UTF-8">
+    <title>Louer ma place - TiPark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:500,500italic,100,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/entry.css">
+  </head>
+  <body>
+    <div class="sideBar" id="sideBar">
+      <div class="sideBar--profil">
+        <img src="img/profil.jpg" alt="photo de profil" class="sideBar--profil--img">
+        <h3 class="sideBar--profil--name">Timothee Hatton</h3>
+        <div class="sideBar--profil--rating"><!--
 --><span title="5">☆</span><!--
 --><span title="4">☆</span><!--
 --><span title="3">☆</span><!--
 --><span title="2">☆</span><!--
 --><span title="1">☆</span>
-				</div>
-			</div>
-			<nav class="sideBar--nav">
-				<ul>
-					<li class="sideBar--nav--title">Se garer</li>
-					<li><a href="#">Trouver une place</a></li>
-					<li><a href="#">Mon profil</a></li>
-					<li class="sideBar--nav--title">Espace propriétaire</li>
-					<li><a href="#">Gérer mes places de parking</a></li>
-					<li><a href="#">Mon profil propriétaire</a></li>
-				</ul>
-			</nav>
-		</div>
-		<div class="home" id="home">
-			<div class="header">
-				<div class="header--btn" id="menu-btn">
-					<span class="header--btn--humburger"></span>
-				</div>
-				<h1 class="header--title">Louer votre place de parking</h1>
-			</div>
-			<div class="entry">
-				<div class="entry--photos">
-					<ul class="entry--photos--list">
-						<li class="entry--photos--list--item">
-							<img class="entry--photos--list--item--photo" src="img/parking1.jpg" alt="parking"/>
-							<input type="file" class="entry--photos--list--item--actions--action--input" class="inputUpload"/>
-							<div class="entry--photos--list--item--actions">
-								<a class="entry--photos--list--item--actions--action" class="triggerUpload" href="#" title="Upload"><i class="fa fa-picture-o" aria-hidden="true"></i>
-								</a>
-								<a class="entry--photos--list--item--actions--action" class="triggerDelete" href="#" title="Remove"><i class="fa fa-trash" aria-hidden="true"></i></a>
-							</div>
-						</li>
-						<li class="entry--photos--list--item" id="addPhoto">
-							<p class="entry--photos--list--item--add">+</p>
-							<p class="entry--photos--list--item--add">Ajouter <br/>une photo</p>
-						</li>
-					</ul>
-				</div>
-				<form action="added.html" method="post" class="entry--form">
-					<div class="entry--form--address">
-						<label for="address">Adresse</label>
-						<input type="text" name="address" placeholder="27 Bis Rue du Progrès, 93100 Montreuil">
-						<div class="entry--form--address--map">
-							Map
-						</div>
-					</div>
-					<div class="entry--form--price semiCol">
-						<label for="price">Prix par heure</label>
-						<div class="entry--form--price--input complexInput qtyInput">
-							<input type='number' name="price" placeholder="1.20€/h" value='0' class='qty' step="0.2"/>
-							<div class="plusMinusButtons">
-								<input type='button' value='-' class='qtyminus' field='price' />
-								<input type='button' value='+' class='qtyplus' field='price' />
-							</div>
-						</div>
-					</div>
-					<div class="entry--form--income semiCol">
-						<label for="none">Votre revenu</label>
-						<p class="calculatedNumber" data-source="price"><span>1.20</span>€/h</p>
-					</div>
+        </div>
+      </div>
+      <nav class="sideBar--nav">
+        <ul>
+          <li class="sideBar--nav--title">Se garer</li>
+          <li><a href="#">Trouver une place</a></li>
+          <li><a href="#">Mon profil</a></li>
+          <li class="sideBar--nav--title">Espace propriétaire</li>
+          <li><a href="#">Gérer mes places de parking</a></li>
+          <li><a href="#">Mon profil propriétaire</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="home" id="home">
+      <div class="header">
+        <div class="header--btn" id="menu-btn">
+          <span class="header--btn--humburger"></span>
+        </div>
+        <h1 class="header--title">Louer votre place de parking</h1>
+      </div>
+      <div class="entry">
+        <div class="entry--photos">
+          <ul class="entry--photos--list">
+            <li class="entry--photos--list--item">
+              <img class="entry--photos--list--item--photo" src="img/parking1.jpg" alt="parking"/>
+              <input type="file" class="entry--photos--list--item--actions--action--input" class="inputUpload"/>
+              <div class="entry--photos--list--item--actions">
+                <a class="entry--photos--list--item--actions--action" class="triggerUpload" href="#" title="Upload"><i class="fa fa-picture-o" aria-hidden="true"></i>
+                </a>
+                <a class="entry--photos--list--item--actions--action" class="triggerDelete" href="#" title="Remove"><i class="fa fa-trash" aria-hidden="true"></i></a>
+              </div>
+            </li>
+            <li class="entry--photos--list--item" id="addPhoto">
+              <p class="entry--photos--list--item--add">+</p>
+              <p class="entry--photos--list--item--add">Ajouter <br/>une photo</p>
+            </li>
+          </ul>
+        </div>
+        <form action="added.html" method="post" class="entry--form">
+          <div class="entry--form--address">
+            <label for="address">Adresse</label>
+            <input type="text" name="address" placeholder="27 Bis Rue du Progrès, 93100 Montreuil">
+            <div class="entry--form--address--map">
+              Map
+            </div>
+          </div>
+          <div class="entry--form--price semiCol">
+            <label for="price">Prix par heure</label>
+            <div class="entry--form--price--input complexInput qtyInput">
+              <input type='number' name="price" placeholder="1.20€/h" value='0' class='qty' step="0.2"/>
+              <div class="plusMinusButtons">
+                <input type='button' value='-' class='qtyminus' field='price' />
+                <input type='button' value='+' class='qtyplus' field='price' />
+              </div>
+            </div>
+          </div>
+          <div class="entry--form--income semiCol">
+            <label for="none">Votre revenu</label>
+            <p class="calculatedNumber" data-source="price"><span name="priceAfter">0.00</span>€/h</p>
+          </div>
 
-					<h2>Type de place</h2>
-					<div class="styledSelect semiCol">
-						<select>
-							<option>Intérieure</option>
-							<option>Extérieure</option>
-						</select>
-						<i class="fa fa-chevron-down" aria-hidden="true"></i>
-					</div>
-					<div class="styledSelect semiCol">
-						<select>
-							<option>Voiture</option>
-							<option>Moto/Scooter</option>
-							<option>Vélo</option>
-							<option>Camionette</option>
-						</select>
-						<i class="fa fa-chevron-down" aria-hidden="true"></i>
-					</div>
+          <h2>Type de place</h2>
+          <div class="styledSelect semiCol">
+            <select>
+              <option>Intérieure</option>
+              <option>Extérieure</option>
+            </select>
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          </div>
+          <div class="styledSelect semiCol">
+            <select>
+              <option>Voiture</option>
+              <option>Moto/Scooter</option>
+              <option>Vélo</option>
+              <option>Camionette</option>
+            </select>
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          </div>
 
-					<div class="entry--form--description">
-						<label for="description">Description</label>
-						<textarea type="text" name="description">Votre description</textarea>
-					</div>
+          <div class="entry--form--description">
+            <label for="description">Description</label>
+            <textarea type="text" name="description">Votre description</textarea>
+          </div>
 
-					<label for="access">Accès à la place</label>
-					<div class="styledSelect">
-						<select>
-							<option>Par serrure ou cadenas NFC</option>
-							<option>Télécommandé par l'application</option>
-							<option>Libre</option>
-						</select>
-						<i class="fa fa-chevron-down" aria-hidden="true"></i>
-					</div>
-					<a href="#" class="uppercaseButton">Voir les solutions compatibles</a>
+          <label for="access">Accès à la place</label>
+          <div class="styledSelect">
+            <select>
+              <option>Par serrure ou cadenas NFC</option>
+              <option>Télécommandé par l'application</option>
+              <option>Libre</option>
+            </select>
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          </div>
+          <a href="#" class="uppercaseButton">Voir les solutions compatibles</a>
 
-					<h2>Disponibilité et prix</h2>
-					<p class="hint">Pour changer le prix ou la disponibilité de votre place selon le moment de l'année, créez vos périodes personnalisées :</p>
-					<ul class="entry--form--periods">
-						<!-- period 1 -->
-						<li class="entry--form--periods--period opened">
-							<h3>Ma période personnalisée</h3>
-							<div class="entry--form--periods--period--buttons">
-								<i class="fa fa-trash deletePeriod" aria-hidden="true"></i>
-								<i class="fa fa-chevron-down togglePeriod" aria-hidden="true"></i>
-							</div>
+          <h2>Disponibilité et prix</h2>
+          <p class="hint">Pour changer le prix ou la disponibilité de votre place selon le moment de l'année, créez vos périodes personnalisées :</p>
+          <ul class="entry--form--periods">
+            <!-- period 1 -->
+            <li class="entry--form--periods--period opened">
+              <h3>Ma période personnalisée</h3>
+              <div class="entry--form--periods--period--buttons">
+                <i class="fa fa-trash deletePeriod" aria-hidden="true"></i>
+                <i class="fa fa-chevron-down togglePeriod" aria-hidden="true"></i>
+              </div>
 
-							<div class="entry--form-periods--period--content">
+              <div class="entry--form-periods--period--content">
 
-								<div class="styledSelect semiCol">
-									<select name="weekDays">
-										<option value="all">Toute la semaine</option>
-										<option value="all">Du lundi au vendredi</option>
-										<option value="all">Samedi et dimanche</option>
-										<option value="all">Le lundi</option>
-										<option value="all">Le mardi</option>
-										<option value="all">Le mercredi</option>
-										<option value="all">Le jeudi</option>
-										<option value="all">Le vendredi</option>
-										<option value="all">Le samedi</option>
-										<option value="all">Le dimanche</option>
-									</select>
-									<i class="fa fa-chevron-down" aria-hidden="true"></i>
-								</div>
-								<div class="styledSelect semiCol">
-									<select name="yearDays">
-										<option value="all">Toute l'année</option>
-										<option value="all">Vacances scolaires</option>
-										<option value="all">Hors vacances scolaires</option>
-										<option value="all">Saison estivale</option>
-										<option value="all">Saison hivernale</option>
-										<option value="personalizedInterval">Intervalle personnalisé</option>
-									</select>
-									<i class="fa fa-chevron-down" aria-hidden="true"></i>
-								</div>
+                <div class="styledSelect semiCol">
+                  <select name="weekDays">
+                    <option value="all">Toute la semaine</option>
+                    <option value="all">Du lundi au vendredi</option>
+                    <option value="all">Samedi et dimanche</option>
+                    <option value="all">Le lundi</option>
+                    <option value="all">Le mardi</option>
+                    <option value="all">Le mercredi</option>
+                    <option value="all">Le jeudi</option>
+                    <option value="all">Le vendredi</option>
+                    <option value="all">Le samedi</option>
+                    <option value="all">Le dimanche</option>
+                  </select>
+                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </div>
+                <div class="styledSelect semiCol">
+                  <select name="yearDays">
+                    <option value="all">Toute l'année</option>
+                    <option value="all">Vacances scolaires</option>
+                    <option value="all">Hors vacances scolaires</option>
+                    <option value="all">Saison estivale</option>
+                    <option value="all">Saison hivernale</option>
+                    <option value="personalizedInterval">Intervalle personnalisé</option>
+                  </select>
+                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </div>
 
-								<div class="inlineChoices personalizedInterval">
-									<label for="hourFrom">Du </label>
-									<input type="date" placeholder="01/01/2016"/>
-									<label for="hourto"> au  </label>
-									<input type="date" placeholder="31/12/2016"/>
-								</div>
+                <div class="inlineChoices personalizedInterval">
+                  <label for="hourFrom">Du </label>
+                  <input type="date" placeholder="01/01/2016"/>
+                  <label for="hourto"> au  </label>
+                  <input type="date" placeholder="31/12/2016"/>
+                </div>
 
-								<div class="inlineChoices">
-									<label for="hourFrom">De </label>
-									<input type="time" placeholder="16:00"/>
-									<label for="hourto"> à  </label>
-									<input type="time" placeholder="22:00"/>
-								</div>
+                <div class="inlineChoices">
+                  <label for="hourFrom">De </label>
+                  <input type="time" placeholder="16:00"/>
+                  <label for="hourto"> à  </label>
+                  <input type="time" placeholder="22:00"/>
+                </div>
 
-								<div class="entry--form--periods--period--periodPrice semiCol">
-									<label for="periodPrice">Prix par heure</label>
-									<div class="entry--form--periods--period--periodPrice--input complexInput qtyInput">
-										<input type='number' name="periodPrice" placeholder="1.20€/h" value='0' class='qty' step="0.2"/>
-										<div class="plusMinusButtons">
-											<input type='button' value='-' class='qtyminus' field='periodPrice' />
-											<input type='button' value='+' class='qtyplus' field='periodPrice' />
-										</div>
-									</div>
-								</div>
-								<div class="entry--form--periods--period--income semiCol">
-									<label for="none">Votre revenu</label>
-									<p class="calculatedNumber" data-source="periodPrice"><span>1.20</span>€/h</p>
-								</div>
+                <div class="entry--form--periods--period--periodPrice semiCol">
+                  <label for="periodPrice">Prix par heure</label>
+                  <div class="entry--form--periods--period--periodPrice--input complexInput qtyInput">
+                    <input type='number' name="periodPrice" placeholder="1.20€/h" value='0' class='qty' step="0.2"/>
+                    <div class="plusMinusButtons">
+                      <input type='button' value='-' class='qtyminus' field='periodPrice' />
+                      <input type='button' value='+' class='qtyplus' field='periodPrice' />
+                    </div>
+                  </div>
+                </div>
+                <div class="entry--form--periods--period--income semiCol">
+                  <label for="none">Votre revenu</label>
+                  <p class="calculatedNumber" data-source="periodPrice"><span>1.20</span>€/h</p>
+                </div>
 
-							</div>
-						</li>
+              </div>
+            </li>
 
-					</ul>
-					<!-- STOCKER PERIODE VIDE : -->
-					<div style="display: none;" id="emptyPeriod">
-						<li class="entry--form--periods--period opened">
-							<h3>Ma période personnalisée</h3>
-							<div class="entry--form--periods--period--buttons">
-								<i class="fa fa-trash deletePeriod" aria-hidden="true"></i>
-								<i class="fa fa-chevron-down togglePeriod" aria-hidden="true"></i>
-							</div>
+          </ul>
+          <!-- STOCKER PERIODE VIDE : -->
+          <div style="display: none;" id="emptyPeriod">
+            <li class="entry--form--periods--period opened">
+              <h3>Ma période personnalisée</h3>
+              <div class="entry--form--periods--period--buttons">
+                <i class="fa fa-trash deletePeriod" aria-hidden="true"></i>
+                <i class="fa fa-chevron-down togglePeriod" aria-hidden="true"></i>
+              </div>
 
-							<div class="entry--form-periods--period--content">
+              <div class="entry--form-periods--period--content">
 
-								<div class="styledSelect semiCol">
-									<select name="weekDays">
-										<option value="all">Toute la semaine</option>
-										<option value="all">Du lundi au vendredi</option>
-										<option value="all">Samedi et dimanche</option>
-										<option value="all">Le lundi</option>
-										<option value="all">Le mardi</option>
-										<option value="all">Le mercredi</option>
-										<option value="all">Le jeudi</option>
-										<option value="all">Le vendredi</option>
-										<option value="all">Le samedi</option>
-										<option value="all">Le dimanche</option>
-									</select>
-									<i class="fa fa-chevron-down" aria-hidden="true"></i>
-								</div>
-								<div class="styledSelect semiCol">
-									<select name="yearDays">
-										<option value="all">Toute l'année</option>
-										<option value="all">Vacances scolaires</option>
-										<option value="all">Hors vacances scolaires</option>
-										<option value="all">Saison estivale</option>
-										<option value="all">Saison hivernale</option>
-										<option value="personalizedInterval">Intervalle personnalisé</option>
-									</select>
-									<i class="fa fa-chevron-down" aria-hidden="true"></i>
-								</div>
+                <div class="styledSelect semiCol">
+                  <select name="weekDays">
+                    <option value="all">Toute la semaine</option>
+                    <option value="all">Du lundi au vendredi</option>
+                    <option value="all">Samedi et dimanche</option>
+                    <option value="all">Le lundi</option>
+                    <option value="all">Le mardi</option>
+                    <option value="all">Le mercredi</option>
+                    <option value="all">Le jeudi</option>
+                    <option value="all">Le vendredi</option>
+                    <option value="all">Le samedi</option>
+                    <option value="all">Le dimanche</option>
+                  </select>
+                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </div>
+                <div class="styledSelect semiCol">
+                  <select name="yearDays">
+                    <option value="all">Toute l'année</option>
+                    <option value="all">Vacances scolaires</option>
+                    <option value="all">Hors vacances scolaires</option>
+                    <option value="all">Saison estivale</option>
+                    <option value="all">Saison hivernale</option>
+                    <option value="personalizedInterval">Intervalle personnalisé</option>
+                  </select>
+                  <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </div>
 
-								<div class="inlineChoices personalizedInterval">
-									<label for="hourFrom">Du </label>
-									<input type="date" placeholder="01/01/2016"/>
-									<label for="hourto"> au  </label>
-									<input type="date" placeholder="31/12/2016"/>
-								</div>
+                <div class="inlineChoices personalizedInterval">
+                  <label for="hourFrom">Du </label>
+                  <input type="date" placeholder="01/01/2016"/>
+                  <label for="hourto"> au  </label>
+                  <input type="date" placeholder="31/12/2016"/>
+                </div>
 
-								<div class="inlineChoices">
-									<label for="hourFrom">De </label>
-									<input type="time" placeholder="16:00"/>
-									<label for="hourto"> à  </label>
-									<input type="time" placeholder="22:00"/>
-								</div>
+                <div class="inlineChoices">
+                  <label for="hourFrom">De </label>
+                  <input type="time" placeholder="16:00"/>
+                  <label for="hourto"> à  </label>
+                  <input type="time" placeholder="22:00"/>
+                </div>
 
-								<div class="entry--form--periods--period--periodPrice semiCol">
-									<label for="periodPrice">Prix par heure</label>
-									<div class="entry--form--periods--period--periodPrice--input complexInput qtyInput">
-										<input type='number' name="periodPrice" placeholder="1.20€/h" value='0' class='qty' step="0.2"/>
-										<div class="plusMinusButtons">
-											<input type='button' value='-' class='qtyminus' field='periodPrice' />
-											<input type='button' value='+' class='qtyplus' field='periodPrice' />
-										</div>
-									</div>
-								</div>
-								<div class="entry--form--periods--period--income semiCol">
-									<label for="none">Votre revenu</label>
-									<p class="calculatedNumber" data-source="periodPrice"><span>1.20</span>€/h</p>
-								</div>
+                <div class="entry--form--periods--period--periodPrice semiCol">
+                  <label for="periodPrice">Prix par heure</label>
+                  <div class="entry--form--periods--period--periodPrice--input complexInput qtyInput">
+                    <input type='number' name="periodPrice" placeholder="1.20€/h" value='0' class='qty' step="0.2"/>
+                    <div class="plusMinusButtons">
+                      <input type='button' value='-' class='qtyminus' field='periodPrice' />
+                      <input type='button' value='+' class='qtyplus' field='periodPrice' />
+                    </div>
+                  </div>
+                </div>
+                <div class="entry--form--periods--period--income semiCol">
+                  <label for="none">Votre revenu</label>
+                  <p class="calculatedNumber" data-source="periodPrice"><span>1.20</span>€/h</p>
+                </div>
 
-							</div>
-						</li>
-					</div>
-					<a href="#"class="entry--form--addPeriod uppercaseButton addPeriod">
-						<i class="fa fa-plus" aria-hidden="true"></i>
-						Ajouter une période personnalisée
-					</a>
+              </div>
+            </li>
+          </div>
+          <a href="#"class="entry--form--addPeriod uppercaseButton addPeriod">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Ajouter une période personnalisée
+          </a>
 
-					<input type="submit" value="Publier" class="entry--form--submit"/>
-				</form>
-			</div>
-		</div>
-		<!--script-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="js/app.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-		<script src="js/entry.js"></script>
-	</body>
+          <input type="submit" value="Publier" class="entry--form--submit"/>
+        </form>
+      </div>
+    </div>
+    <!--script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-fKMMeMO0UpSP4do3M9Bo6q7h9RzZ0fg&signed_in=true"></script>
+    <script src="js/app.js"></script>
+    <script src="js/entry.js"></script>
+  </body>
 </html>
