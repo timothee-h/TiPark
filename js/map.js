@@ -2,6 +2,13 @@ var currentPosBeginning;
 var map;
 var valider = document.querySelector(".home--search--submit");
 var geocoder = new google.maps.Geocoder;
+if(localStorage["Marqueurs ajoutés"]){
+  storedMarkers = JSON.parse(localStorage.getItem("Marqueurs ajoutés"));
+}
+else{
+  storedMarkers = [];
+  localStorage.setItem("Marqueurs ajoutés", JSON.stringify(storedMarkers));
+}
 
 google.maps.event.addDomListener(window, 'load', init);
 
@@ -24,11 +31,15 @@ function init() {
         position: currentPosBeginning,
         map: map,
       });
+      google.maps.event.addListener(marker, "click", function(event){
+        alert("Vous êtes ici");
+      });
+      print(allMarkers);
+      print(storedMarkers);
     });
-    print(allMarkers);
   }
   valider.addEventListener("click", function(){
-    search(geocoder, map)
+    search(geocoder, map);
   });
 }
 
@@ -60,6 +71,7 @@ function printMarkers(markerList, counter){
     map: map,
     data: counter
   });
+  console.log(markerList[counter].position.lat);
   markerToPrint.setMap(map);
 }
 

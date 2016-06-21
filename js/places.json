@@ -1,8 +1,8 @@
 var allMarkers = [
   {
     position: {
-      lat: 10,
-      lng: 10
+      lat: 48.847759,
+      lng: 2.4394968999999946
     },
     time: {
       hour: "21:00",
