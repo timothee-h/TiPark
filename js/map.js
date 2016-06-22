@@ -69,7 +69,8 @@ function printMarkers(markerList, counter){
       lng: markerList[counter].position.lng
     },
     map: map,
-    data: counter
+    data: counter,
+    icon: "img/marqueur.png"
   });
   markerToPrint.setMap(map);
   google.maps.event.addListener(markerToPrint, "click", function(event){
