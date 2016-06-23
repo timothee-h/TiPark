@@ -119,8 +119,7 @@ $(document).ready(function() {
       $('.home--content--item--time').fadeOut();
       $('.home--content--item--travel').fadeOut();
       $('.home--content--item--adresse').toggleClass('home--content--item--adresse-active');
-      $('.home--time').fadeIn()
-      $('.home--more').fadeIn();
+      $('.home--time').fadeIn();
       timer ();
     });
   }
@@ -143,13 +142,4 @@ $(document).ready(function() {
       }
     }, 60000);
   }
-  //more time
-  function moreTime() {
-    $('.home--more').click( function() {
-      $('.home--time').addClass('home--time-active');
-      $('.home--time--more').fadeIn();
-      hourSelect++;
-    });
-  }
-  moreTime();
 });
