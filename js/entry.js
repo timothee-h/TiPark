@@ -129,6 +129,7 @@ $(document).ready(function(){
     foundAddress(geocoder);
     spot.price = $("input[name='price']").val();
     spot.desc = $("textarea[name='description']").val();
+    spot.rue = $("input[name='address']").val();
     spot.profil.name = "Moi";
     spot.profil.img = "img/profil.jpg";
     storedMarkers[storedMarkers.length] = spot;

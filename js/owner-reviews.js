@@ -16,7 +16,7 @@ else{
 $(document).ready(function(){
   $("span[name='NbrDesc']").empty();
   $("span[name='NbrDesc']").append(NbrDesc);
-  for(var i=0; i<1; i++){
+  for(var i=0; i<storedDesc.length; i++){
     printReviews(storedDesc, i);
   }
   function printReviews(listReviews, counter){
@@ -33,7 +33,7 @@ $(document).ready(function(){
     stringToPrint += '</div>';
     stringToPrint += '<h4 class="owner--reviews--list--item--reviewer">' + listReviews[counter].name + '</h4>';
     stringToPrint += '<p class="owner--reviews--list--item--review">' + listReviews[counter].desc + '</p>';
-    stringToPrint += '<li/>';
+    stringToPrint += '</li>';
     $(".owner--reviews--list").append(stringToPrint);
   }
 });
