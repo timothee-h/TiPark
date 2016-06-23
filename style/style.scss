@@ -28,6 +28,17 @@ body {
   input:focus, button:focus, select:focus {
     outline: none;
   }
+	.close {
+		transition-duration: 0.5s;
+    transform: rotate(45deg);
+    &::before {
+      bottom: 0px;
+    }
+    &::after {
+      top: 0px;
+      transform: rotate(-90deg);
+    }
+  }
 }
 
 .connexion {
@@ -241,6 +252,7 @@ body {
     width: 70px;
     cursor: pointer;
     &--humburger {
+			transition-duration: 0.5s;
       width: 30px;
       height: 5px;
       background-color: $color;
@@ -407,6 +419,34 @@ body {
       }
     }
   }
+	&--time {
+		display: inline-block;
+		position: absolute;
+		background-color: $color;
+		height: 90px;
+		width: 90px;
+		border-radius: 50%;
+		bottom: 70px;
+		right: 30px;
+		color: #fff;
+		text-align: center;
+		line-height: 90px;
+		font-size: 30px;
+		display: none;
+		&--point {
+			position: absolute;
+			bottom: 0px;
+			right: 49px;
+			animation-name: clignote;
+	    animation-duration: 1s;
+	    animation-iteration-count:infinite;
+		}
+	  @keyframes clignote {
+	    0%{opacity: 0;}
+	    50%{opacity: 1;}
+	    100%{opacity: 0;}
+	  }
+	}
   &--search {
     display: none;
     text-align: center;
@@ -575,6 +615,16 @@ body {
 				clear: both;
 				text-transform: uppercase;
 				font-size: 20px;
+				&-active {
+					font-size: 19px;
+					margin-top: 0;
+					padding-top: 0;
+					border: none;
+					position: relative;
+					bottom: 45px;
+					text-transform: capitalize;
+					left: 130px;
+				}
 				span:nth-child(1) {
 					display: block;
 					margin-bottom: 5px;

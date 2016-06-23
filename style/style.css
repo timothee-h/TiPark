@@ -61,6 +61,14 @@ body {
   color: #4f4f4f; }
   body input:focus, body button:focus, body select:focus {
     outline: none; }
+  body .close {
+    transition-duration: 0.5s;
+    transform: rotate(45deg); }
+    body .close::before {
+      bottom: 0px; }
+    body .close::after {
+      top: 0px;
+      transform: rotate(-90deg); }
 
 .connexion {
   background-color: #eeeeee;
@@ -245,6 +253,7 @@ body {
     width: 70px;
     cursor: pointer; }
     .header--btn--humburger {
+      transition-duration: 0.5s;
       width: 30px;
       height: 5px;
       background-color: #31bb8a;
@@ -382,6 +391,34 @@ body {
             bottom: 0; }
           .home--map--toolbar--search-active4 {
             bottom: 60%; }
+  .home--time {
+    display: inline-block;
+    position: absolute;
+    background-color: #31bb8a;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    bottom: 70px;
+    right: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 90px;
+    font-size: 30px;
+    display: none; }
+    .home--time--point {
+      position: absolute;
+      bottom: 0px;
+      right: 49px;
+      animation-name: clignote;
+      animation-duration: 1s;
+      animation-iteration-count: infinite; }
+@keyframes clignote {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
   .home--search {
     display: none;
     text-align: center;
@@ -526,6 +563,15 @@ body {
         clear: both;
         text-transform: uppercase;
         font-size: 20px; }
+        .home--content--item--adresse-active {
+          font-size: 19px;
+          margin-top: 0;
+          padding-top: 0;
+          border: none;
+          position: relative;
+          bottom: 45px;
+          text-transform: capitalize;
+          left: 130px; }
         .home--content--item--adresse span:nth-child(1) {
           display: block;
           margin-bottom: 5px; }

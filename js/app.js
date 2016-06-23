@@ -5,6 +5,7 @@ $(document).ready(function() {
       e.preventDefault();
       $('#sideBar').toggleClass('sideBar-active');
       $('#home').toggleClass('home-active');
+      $('.header--btn--humburger').toggleClass('close');
     });
   }
   menu();
@@ -111,6 +112,10 @@ $(document).ready(function() {
       $('.home--map--toolbar--search').toggleClass('home--map--toolbar-activeLoc');
       $('.home--map--toolbar').toggleClass('home--map--toolbar-activeLoc');
       $('.home--map').toggleClass('home--map-activeLoc');
+      $('.home--content--item--time').fadeOut();
+      $('.home--content--item--travel').fadeOut();
+      $('.home--content--item--adresse').toggleClass('home--content--item--adresse-active');
+      $('.home--time').fadeIn();
     });
   }
   selectPlace();
