@@ -406,9 +406,11 @@ body {
     font-size: 30px;
     display: none; }
     .home--time--point {
+      color: #fff;
+      font-size: 30px;
       position: absolute;
-      bottom: 0px;
-      right: 49px;
+      bottom: 100px;
+      right: 79px;
       animation-name: clignote;
       animation-duration: 1s;
       animation-iteration-count: infinite; }

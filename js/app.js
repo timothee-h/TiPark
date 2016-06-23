@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  //default value
+  var hourSelect = 3;
   //menu
   function menu() {
     $('#menu-btn').click( function(e) {
@@ -49,6 +51,7 @@ $(document).ready(function() {
       var hour = $('.home--map--toolbar--hour').html();
       hour++;
       currentHour++;
+      hourSelect++;
       if (currentHour >= 24) {
         currentHour = 0;
       }
@@ -60,6 +63,7 @@ $(document).ready(function() {
       if (hour > 1) {
         hour--;
         currentHour--;
+        hourSelect--;
         if (currentHour < 0) {
           currentHour = 23;
         }
@@ -116,7 +120,26 @@ $(document).ready(function() {
       $('.home--content--item--travel').fadeOut();
       $('.home--content--item--adresse').toggleClass('home--content--item--adresse-active');
       $('.home--time').fadeIn();
+      timer ();
     });
   }
   selectPlace();
+  //timer
+  function timer() {
+    var minute = 0;
+    $('.home--time').html(hourSelect + '&nbsp;&nbsp;' + 0 + minute);
+    setInterval(function(){
+      minute--
+      if (minute < 0) {
+        minute = 59;
+        hourSelect--
+      }
+      if (minute < 10) {
+        $('.home--time').html(hourSelect + '&nbsp;&nbsp;' + 0 + minute);
+      }
+      else {
+        $('.home--time').html(hourSelect + '&nbsp;&nbsp;' + minute);
+      }
+    }, 60000);
+  }
 });
