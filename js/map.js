@@ -30,6 +30,7 @@ function init() {
       var marker = new google.maps.Marker({
         position: currentPosBeginning,
         map: map,
+        icon: "img/local.png"
       });
       google.maps.event.addListener(marker, "click", function(event){
         alert("Vous êtes ici");
@@ -74,10 +75,8 @@ function printMarkers(markerList, counter){
   });
   markerToPrint.setMap(map);
   google.maps.event.addListener(markerToPrint, "click", function(event){
-    $(".home--content--item[data=" + counter + "]").addClass('home--content--item-active');
-    $('.home--map').addClass('home--map-active2');
-    $('.home--content').addClass('home--content-active');
-    $('#search').addClass('home--map--toolbar--search-active4');
+    var item = $(".home--content--item[data=" + counter + "]");
+    resizeItem(item);
   });
 }
 
@@ -116,10 +115,43 @@ function printItem(markerList, counter){
   stringToPrint += '<div class="home--content--item--reservation">';
   stringToPrint += '<div class="home--content--item--reservation--price">';
   stringToPrint += '<span class="home--content--item--reservation--price--total">Total</span>';
-  stringToPrint += '<span class="home--content--item--reservation--price--num">' + /*markerList[counter].time.price*(document.querySelector("..home--map--toolbar--hour")) */ '€</span>';
+  stringToPrint += '<span class="home--content--item--reservation--price--num">' + /*markerList[counter].time.price*hour()*/   '€</span>';
   stringToPrint += '</div>';
   stringToPrint += '<a href="reservation.html" class="home--content--item--reservation--btn">Je réserve</a>';
   stringToPrint += '</div>';
   stringToPrint += '</div>';
   $(".home--content").append(stringToPrint);
+}
+
+function hour(){
+  var currentHour = document.querySelector(".home--map--toolbar--hour").value;
+  return currentHour;
+}
+
+function resizeItem(toResize) {
+  var state = open;
+  $(".home--map").removeClass("home--map-active");
+  $(".home--content--item").removeClass("home--content--item-active");
+  $('.home--content').addClass('home--content-active');
+  $('#search').removeClass('home--map--toolbar--search-active3');
+  toResize.addClass("home--content--item-active");
+  toResize.click( function() {
+    if (state == close) {
+      toResize.addClass('home--content--item-active');
+      $('.home--map').addClass('home--map-active2');
+      $('.home--content').addClass('home--content-active');
+      $('#search').addClass('home--map--toolbar--search-active4');
+      state = open;
+    } else if (state == open && $(this).hasClass('home--content--item-active')) {
+      $(this).removeClass('home--content--item-active');
+      $('.home--map').removeClass('home--map-active2');
+      $('.home--content').removeClass('home--content-active');
+      $('#search').removeClass('home--map--toolbar--search-active4');
+      state = close;
+    } else if (state == open) {
+      toResize.removeClass('home--content--item-active');
+      $(this).addClass('home--content--item-active');
+      state = open;
+    }
+  });
 }

@@ -15,7 +15,7 @@ var allMarkers = [
     },
     profil: {
       name: "Timothée Hatton",
-      img: "img/profil-bg.png",
+      img: "img/profil.jpg",
     }
   },
   {

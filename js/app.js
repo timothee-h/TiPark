@@ -80,9 +80,9 @@ $(document).ready(function() {
   }
   resizeMap();
   //resizeItem
-  function resizeItem() {
+  function resizeItem(toResize) {
     var state = close;
-    $('.home--content--item').click( function() {
+    toResize.click( function() {
       if (state == close) {
         $(this).addClass('home--content--item-active');
         $('.home--map').addClass('home--map-active2');
@@ -96,13 +96,13 @@ $(document).ready(function() {
         $('#search').removeClass('home--map--toolbar--search-active4');
         state = close;
       } else if (state == open) {
-        $('.home--content--item').removeClass('home--content--item-active');
+        toResize.removeClass('home--content--item-active');
         $(this).addClass('home--content--item-active');
         state = open;
       }
     });
   }
-  resizeItem();
+  resizeItem($('.home--content--item'));
   //selectPlace
   function selectPlace() {
     $('.home--content--item--reservation--btn').click( function() {
