@@ -125,8 +125,8 @@ function printItem(markerList, counter){
   stringToPrint += '<div class="home--content--item--time--price">' + markerList[counter].time.price + '€ - heure</div>';
   stringToPrint += '</div>';
   stringToPrint += '<div class="home--content--item--travel">';
-  stringToPrint += '<div class="home--content--item--travel--duration">' + duration[counter] + '</div>';
-  stringToPrint += '<div class="home--content--item--travel--distance">' + distance[counter] + '</div>';
+  stringToPrint += '<div class="home--content--item--travel--duration">' + duration[counter] + '<span>min</span></div>';
+  stringToPrint += '<div class="home--content--item--travel--distance">' + distance[counter] + '<span>km</span></div>';
   stringToPrint += '</div>';
   stringToPrint += '<div class="home--content--item--adresse">';
   stringToPrint += '<span class="home--content--item--adresse--rue">' + markerList[counter].adresse.rue + '</span>';
@@ -179,8 +179,8 @@ function searchDuration(origin, destination, counter){
   }, function(response, status){
     if (status == google.maps.DistanceMatrixStatus.OK) {
       element[counter] = response.rows[0].elements;
-      distance[counter] = element[counter][0].distance.text;
-      duration[counter] = element[counter][0].duration.text;
+      distance[counter] = parseInt(element[counter][0].distance.text);
+      duration[counter] = parseFloat(element[counter][0].duration.text);
     }
   });
 }
