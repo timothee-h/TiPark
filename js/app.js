@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  
   //default value
   var hourSelect = 3;
   //menu
