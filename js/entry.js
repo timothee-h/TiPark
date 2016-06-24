@@ -126,12 +126,13 @@ $(document).ready(function(){
   });
   function addSpot(){
     spot = new Object;
-    foundAddress(geocoder);
-    spot.price = $("input[name='price']").val();
-    spot.desc = $("textarea[name='description']").val();
-    spot.rue = $("input[name='address']").val();
-    spot.profil.name = "Moi";
-    spot.profil.img = "img/profil.jpg";
+    //foundAddress(geocoder);
+    spot.position = {lat: 48.850579, lng: 2.416478};
+    spot.price = 2;
+    spot.desc = "Ma description de place.";
+    spot.rue = "14 rue Valmy 93100 Montreuil";
+    console.log(spot);
+    spot.profil = {name: "Timothée Hatton", img: "img/parking1.jpg"};
     storedMarkers[storedMarkers.length] = spot;
     localStorage.setItem("Marqueurs ajoutés", JSON.stringify(storedMarkers));
   }
