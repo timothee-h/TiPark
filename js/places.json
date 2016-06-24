@@ -1,21 +1,22 @@
 var allMarkers = [
   {
     position: {
-      lat: 48.845157,
-      lng: 2.433969
+      lat: 48.851228,
+      lng: 2.412722
     },
     time: {
-      hour: "21:00",
-      price: 3
+      hour: "19:00",
+      price: 1,
+      finalPrice: 3
     },
-    img: "img/parking1.jpg",
+    img: "img/parking3.jpg",
     adresse: {
-      rue: "48 avenue de Paris",
-      code: "94300 Vincennes",
+      rue: "34 Rue Maryse Hilsz",
+      code: "75020 Paris",
     },
     profil: {
-      name: "Timothée Hatton",
-      img: "img/profil.jpg",
+      name: "Antoine Mouës",
+      img: "img/profil_antoine.jpg",
     }
   },
   {
@@ -24,8 +25,9 @@ var allMarkers = [
       lng: 2.417822
     },
     time: {
-      hour: "21:00",
-      price: 3
+      hour: "17:00",
+      price: 2,
+      finalPrice: 6
     },
     img: "img/parking2.jpg",
     adresse: {
@@ -39,21 +41,42 @@ var allMarkers = [
   },
   {
     position: {
-      lat: 48.851228,
-      lng: 2.412722
+      lat: 48.856581,
+      lng: 2.419755
     },
     time: {
-      hour: "21:00",
-      price: 3
+      hour: "18:00",
+      price: 1,
+      finalPrice: 3
     },
-    img: "img/parking3.jpg",
+    img: "img/parking1.jpg",
     adresse: {
-      rue: "34 Rue Maryse Hilsz",
-      code: "75020 Paris",
+      rue: "23 rue Etienne Marcel",
+      code: "93100 Montreuil",
     },
     profil: {
-      name: "Antoine Mouës",
-      img: "img/profil_antoine.jpg",
+      name: "Timothée Hatton",
+      img: "img/profil.jpg",
+    }
+  },
+  {
+    position: {
+      lat: 48.845157,
+      lng: 2.433969
+    },
+    time: {
+      hour: "22:00",
+      price: 1,
+      finalPrice: 3
+    },
+    img: "img/parking1.jpg",
+    adresse: {
+      rue: "48 avenue de Paris",
+      code: "94300 Vincennes",
+    },
+    profil: {
+      name: "Timothée Hatton",
+      img: "img/profil.jpg",
     }
   },
 ];

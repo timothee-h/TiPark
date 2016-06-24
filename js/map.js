@@ -3,6 +3,7 @@ var map;
 var valider = document.querySelector(".home--search--submit");
 var geocoder = new google.maps.Geocoder;
 var service = new google.maps.DistanceMatrixService();
+var directionsDisplay = new google.maps.DirectionsRenderer();
 var element = new Array;
 var duration = new Array;
 var distance = new Array;
@@ -41,6 +42,7 @@ function init() {
       });
       print(allMarkers);
       print(storedMarkers);
+      $(".preloader").fadeOut(500);
     });
   }
   valider.addEventListener("click", function(){
@@ -87,6 +89,32 @@ function print(markerList){
           $(this).addClass('home--content--item-active');
           state = open;
         }
+      });
+      $(".home--content--item--reservation--btn").on("click", function(){
+        $('.home--content--item').toggleClass('home--content--item-activeLoc');
+        $('.home--content').toggleClass('home--content-activeLoc');
+        $('.home--map--toolbar--search').toggleClass('home--map--toolbar-activeLoc');
+        $('.home--map--toolbar').toggleClass('home--map--toolbar-activeLoc');
+        $('.home--map').toggleClass('home--map-activeLoc');
+        $('.home--content--item--time').fadeOut();
+        $('.home--content--item--travel').fadeOut();
+        $('.home--content--item--adresse').toggleClass('home--content--item--adresse-active');
+        $('.home--time').fadeIn()
+        $('.home--more').fadeIn();
+        directionsDisplay.setMap(map);
+        var DirectionsService = new google.maps.DirectionsService;
+        DirectionsService.route({
+          origin: currentPosBeginning,
+          destination: markerList[0].position,
+          travelMode: google.maps.DirectionsTravelMode.DRIVING
+        }, function(response, status) {
+          if (status === google.maps.DirectionsStatus.OK) { 
+            directionsDisplay.setDirections(response);
+          } 
+          else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
       });
     }
   }}, 3500);
@@ -148,7 +176,7 @@ function printItem(markerList, counter){
   stringToPrint += '<div class="home--content--item--reservation">';
   stringToPrint += '<div class="home--content--item--reservation--price">';
   stringToPrint += '<span class="home--content--item--reservation--price--total">Total</span>';
-  stringToPrint += '<span class="home--content--item--reservation--price--num">' + /*markerList[counter].time.price*hour()*/   '€</span>';
+  stringToPrint += '<span class="home--content--item--reservation--price--num">' + markerList[counter].time.finalPrice +   '€</span>';
   stringToPrint += '</div>';
   stringToPrint += '<a class="home--content--item--reservation--btn">Je réserve</a>';
   stringToPrint += '</div>';
@@ -166,8 +194,6 @@ function resizeItem(toResize) {
   });
 }
 
-
-
 function searchDuration(origin, destination, counter){
   service.getDistanceMatrix({
     origins: origin,
@@ -181,3 +207,15 @@ function searchDuration(origin, destination, counter){
     }
   });
 }
+//more time
+function moreTime() {
+  var hourSelect = 3;
+  $('.home--more').click( function() {
+    $('.home--time').addClass('home--time-active');
+    $('.home--time--more').fadeIn();
+    hourSelect++;
+    $('.home--time').empty();
+    $('.home--time').append(hourSelect+"&nbsp;&nbsp;00");
+  });
+}
+moreTime();
